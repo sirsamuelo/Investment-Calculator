@@ -42,8 +42,8 @@ const MyResponsiveLine = ({ data  }) => (
             tickPadding: 10,
             tickRotation: 0,
             legend: 'amount €',
-            legendOffset: -40,
-            legendPosition: 'top'
+            legendOffset: -50,
+            legendPosition: 'end'
 
         }}
         lineWidth={3}
@@ -51,7 +51,7 @@ const MyResponsiveLine = ({ data  }) => (
         pointColor={{ theme: 'background' }}
         pointBorderWidth={5}
         pointBorderColor={{ from: 'serieColor' }}
-        pointLabelYOffset={-12}
+        pointLabelYOffset={12}
         useMesh={true}
         
         legends={[

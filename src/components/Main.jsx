@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MyResponsiveLine from './MyResponsiveLine'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -15,7 +15,7 @@ const Main = () => {
   const [expectedReturn, setExpectedReturn] = useState(0)
   const [monthlyDeposit, setMonthlyDeposit] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [finalAmout,setFinalAmount] = useState(0)
+  const [finalAmount,setFinalAmount] = useState(0)
   const [myData, setMyData] = useState([])
 
   function buildValues(
@@ -83,7 +83,6 @@ const Main = () => {
 
     //Create object from two arrays
     const objectFromArrays = convertToObj(labels, balances)
-    console.log(objectFromArrays)
 
     //create desired array from object
     let desiredData = populateData(objectFromArrays)
@@ -101,16 +100,34 @@ const Main = () => {
       startMoney+=1000
   }
     const newObjectFrom = convertToObj(labels, balances)
-    console.log(newObjectFrom)
     desiredData = populateData(newObjectFrom)
     testing[1].data = desiredData
     setMyData(testing)
-    const {y} = myData[0].data.pop()
-    setFinalAmount(y)
+
+    setTimeout(() => {
+      const hovno = testing[0].data.slice(-1)
+      console.log(hovno[0].y)
+      setFinalAmount(hovno[0].y)
+    },1000)
+
 
     var container = document.querySelector('.graph__container')
     container.style.display = 'block'
   }
+
+  useEffect(()=> {
+    function checkEmpty(){
+      if(myData.lengh > 0) {
+        const hovno = myData[0].data.slice(-1)
+        console.log(hovno[0].y)
+        setFinalAmount(hovno[0].y)
+      } else {
+        return
+      }
+    }
+
+    checkEmpty()
+  },[myData])
 
   return (
     <div className='container'>
@@ -167,7 +184,7 @@ const Main = () => {
       </section>
       <div className='graph__container'>
         <h2><FontAwesomeIcon icon={faChartSimple} /> Growth Chart</h2>
-        <h4>Total value <span className='span'>{finalAmout}€</span> in <span className='span'>{duration} years</span></h4>
+        <h4>Total value <span className='span'>{finalAmount}€</span> in <span className='span'>{duration} years</span></h4>
         <MyResponsiveLine data={myData} />
       </div>
     </div>
