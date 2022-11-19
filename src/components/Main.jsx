@@ -8,6 +8,7 @@ import {
   faClock,
   faChartSimple,
 } from '@fortawesome/free-solid-svg-icons'
+import Questionaire from './Questionaire'
 
 const Main = () => {
   const [startingBalance, setStartingBalance] = useState(0)
@@ -71,7 +72,6 @@ const Main = () => {
     let balances = []
     let labels = []
     const monthlyReturn = expectedReturn / 100 / 12
-    console.log(monthlyReturn)
     buildValues(
       labels,
       balances,
@@ -83,17 +83,28 @@ const Main = () => {
 
     //Create object from two arrays
     const objectFromArrays = convertToObj(labels, balances)
+    console.log(objectFromArrays)
 
     //create desired array from object
-    const desiredData = populateData(objectFromArrays)
+    let desiredData = populateData(objectFromArrays)
 
     var testing = [{ id: 'Revenue', color: 'hsl(50, 30%, 50%)' }]
     testing[0].data = desiredData
-    setMyData(testing)
-    testing.forEach((item) => {
-      console.log(item.data.forEach((record) => console.log(record)))
-    })
+    testing.push({id: 'Bez investovanie', color: 'hsl(50, 30%, 50%)'})
 
+    balances = []
+    labels = []
+    let startMoney = Number(startingBalance)
+    for(let i = 0;i<=duration;i++) { 
+      balances.push(startMoney)
+      labels.push(`Year ${i}`)
+      startMoney+=1000
+  }
+    const newObjectFrom = convertToObj(labels, balances)
+    console.log(newObjectFrom)
+    desiredData = populateData(newObjectFrom)
+    testing[1].data = desiredData
+    setMyData(testing)
     const {y} = myData[0].data.pop()
     setFinalAmount(y)
 
@@ -103,6 +114,7 @@ const Main = () => {
 
   return (
     <div className='container'>
+      <Questionaire />
       <section className='sliders'>
         <h1>Investment Calculator</h1>
         <form onSubmit={onSubmit}>

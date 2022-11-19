@@ -22,7 +22,6 @@ const MyResponsiveLine = ({ data  }) => (
             type: 'linear',
             min: 'auto',
             max: 'auto',
-            stacked: true,
             reverse: false
         }}
         yFormat=" >-.2f"
