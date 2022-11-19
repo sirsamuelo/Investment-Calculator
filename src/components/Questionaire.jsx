@@ -5,7 +5,7 @@ import Checkbox from './Checkbox.jsx'
 const Questionaire = () => {
     function findLengthOfCheckboxes(dotaznik) {
         let sum = 0;
-        dotaznik.map((item,index) => {
+        dotaznik.forEach((item) => {
             sum = sum + Object.keys(item).length - 1
         })
         return sum
