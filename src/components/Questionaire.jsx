@@ -17,13 +17,13 @@ const Questionaire = () => {
     setIsChecked(updateCheckedState)
   }
 
-  const goOver = (index) => {
-    for (let i = 0; i < isChecked.length; i++) {
-      if (isChecked[index].selected === true) {
-        return true
-      }
-    }
-  }
+  // const goOver = (index) => {
+  //   for (let i = 0; i < isChecked.length; i++) {
+  //     if (isChecked[index].selected === true) {
+  //       return true
+  //     }
+  //   }
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
