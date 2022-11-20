@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import Questionaire from './Questionaire'
 
-const Main = ({ buildValues, convertToObj, populateData }) => {
+const Main = ({ buildValues, convertToObj, populateData,findLengthOfCheckboxes }) => {
   const [startingBalance, setStartingBalance] = useState(0)
   const [expectedReturn, setExpectedReturn] = useState(0)
   const [monthlyDeposit, setMonthlyDeposit] = useState(0)
@@ -69,7 +69,7 @@ const Main = ({ buildValues, convertToObj, populateData }) => {
 
   return (
     <div className='container'>
-      <Questionaire />
+      <Questionaire findLengthOfCheckboxes={findLengthOfCheckboxes}/>
       <section className='sliders'>
         <h1>Investment Calculator</h1>
         <form onSubmit={onSubmit}>
