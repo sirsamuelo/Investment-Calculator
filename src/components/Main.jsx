@@ -69,7 +69,7 @@ const Main = ({ buildValues, convertToObj, populateData,findLengthOfCheckboxes }
 
   return (
     <div className='container'>
-      <Questionaire findLengthOfCheckboxes={findLengthOfCheckboxes}/>
+      <Questionaire />
       <section className='sliders'>
         <h1>Investment Calculator</h1>
         <form onSubmit={onSubmit}>
