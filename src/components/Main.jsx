@@ -87,8 +87,8 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 					</div>
 
 					<div className='form-group'>
-						<label htmlFor='age'>
-							<FontAwesomeIcon icon={faPercent} /> Expected Return %
+						<label htmlFor='expected return'>
+							<FontAwesomeIcon icon={faPercent} /> Expected Return
 						</label>
 						<input
 							type='text'
@@ -109,7 +109,7 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 					</div>
 
 					<div className='form-group'>
-						<label htmlFor='age'>
+						<label htmlFor='Duration'>
 							<FontAwesomeIcon icon={faClock} /> Duration (years)
 						</label>
 						<input

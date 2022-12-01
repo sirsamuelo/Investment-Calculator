@@ -6,9 +6,10 @@ import { Line} from 'rc-progress';
 const Questionaire = ({pullData}) => {
 	const [isChecked, setIsChecked] = useState([]);
 	const [opened,setOpened] = useState(false);
-	
+
 	const initialState = {
-		slideIndex : 0
+		slideIndex : 0,
+		opened: false
 	}
 
 	const questionsReducer = (state,event) => {
@@ -19,6 +20,11 @@ const Questionaire = ({pullData}) => {
 			return {
 				...state,
 				slideIndex: state.slideIndex + 1
+			}
+		}
+		if(event.type === 'OPEN') {
+			return {
+				...state, opened: true
 			}
 		}
 	}
@@ -32,8 +38,8 @@ const Questionaire = ({pullData}) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		setOpened(true);
+		
+		dispatch({ type: "OPEN" })
 	};
 
 	function myCheckboxFunction(e, id, indexInArray) {
@@ -41,10 +47,10 @@ const Questionaire = ({pullData}) => {
 		if (checked) {
 			const updateCheckedState = isChecked.map((item, index) => {
 				if (indexInArray === index) {
+					item.selected = true
 					let poleMoznosti = item.moznosti;
 					poleMoznosti.forEach((moznost) => {
 						if (moznost.id === id) {
-							console.log(moznost);
 							moznost.selected = true;
 							return moznost.selected;
 						}
@@ -57,9 +63,9 @@ const Questionaire = ({pullData}) => {
 			const updateCheckedState = isChecked.map((item, index) => {
 				if (indexInArray === index) {
 					let poleMoznosti = item.moznosti;
+					item.selected = false
 					poleMoznosti.forEach((moznost) => {
 						if (moznost.id === id) {
-							console.log(moznost);
 							moznost.selected = false;
 							return moznost.selected;
 						}
@@ -70,7 +76,27 @@ const Questionaire = ({pullData}) => {
 			setIsChecked(updateCheckedState);
 		}
 	}
-	function functionToDisable() {}
+	function functionToDisable(moznostId,otazkaId) {
+		for(let i =0;i<isChecked.length;i++) {
+			if(i === otazkaId && isChecked[i].selected === true) {
+				let [a,b,c,d,e] = isChecked[i].moznosti
+				switch(moznostId){
+					case 1:
+						return !a.selected
+					case 2:
+						return !b.selected
+					case 3:
+						return !c.selected
+					case 4:
+						return !d.selected
+					case 5:
+						return !e.selected
+					default: 
+						return false
+				}
+			}
+		}
+	}
 
 	
 	return (
@@ -82,22 +108,23 @@ const Questionaire = ({pullData}) => {
 							if(index === state.slideIndex) {
 								const {id,question,moznosti} = item
 								let [a,b,c,d,e] = moznosti
-								console.log(state.slideIndex)
 								return <div key={index}>
 											<Line percent={id * 10} strokeWidth={1} strokeColor="#0065ad" />
 											<div className='questionHeading'>{question}</div>
 											<div className="moznosti">
-												<Checkbox label={a.a} onChange={(e) => myCheckboxFunction(e, a.id, index)}/>
-												<Checkbox label={b.b} onChange={(e) => myCheckboxFunction(e, b.id, index)}/>
-												{c && <Checkbox label={c.c} onChange={(e) => myCheckboxFunction(e, c.id, index)}/>}
-												{d && <Checkbox label={d.d} onChange={(e) => myCheckboxFunction(e, d.id, index)}/>}
-												{e && <Checkbox label={e.e} onChange={(e) => myCheckboxFunction(e, e.id, index)}/>}
+												<Checkbox label={a.a} onChange={(e) => myCheckboxFunction(e, a.id, index)} disabled={functionToDisable(a.id,index)} />
+												<Checkbox label={b.b} onChange={(e) => myCheckboxFunction(e, b.id, index)} disabled={functionToDisable(b.id,index)} />
+												{c && <Checkbox label={c.c} onChange={(e) => myCheckboxFunction(e, c.id, index)} disabled={functionToDisable(c.id,index)} />}
+												{d && <Checkbox label={d.d} onChange={(e) => myCheckboxFunction(e, d.id, index)} disabled={functionToDisable(d.id,index)} />}
+												{e && <Checkbox label={e.e} onChange={(e) => myCheckboxFunction(e, e.id, index)} disabled={functionToDisable(e.id,index)} />}
 											</div>
 										</div>
 							}
 						})
 					}
-					<button className='next' onClick={() => dispatch({ type: "NEXT" })}>Next</button>
+					<button type={state.slideIndex === 9 ? 'submit' : 'button'}  className='next' onClick={() => dispatch({ type: "NEXT" })}>{
+						state.slideIndex === 9 ? 'Submit' : 'Next'
+					}</button>
 				</div>
 				{/* <div className='questions'>
 					{isChecked &&
