@@ -1,21 +1,22 @@
 import { useState, useEffect,useReducer } from 'react';
 import dotaznik from '../sample.js';
 import Checkbox from './Checkbox.jsx';
+import TransitionsModal from './TransitionsModal.jsx'
 import { Line} from 'rc-progress';
 
-const Questionaire = ({pullData}) => {
+const Questionaire = () => {
 	const [isChecked, setIsChecked] = useState([]);
-	const [opened,setOpened] = useState(false);
+	const [count,setCount] = useState(0)
 
 	const initialState = {
 		slideIndex : 0,
-		opened: false
+		submited: false,
 	}
 
 	const questionsReducer = (state,event) => {
 		if(event.type === 'NEXT') {
 			if(state.slideIndex === 9) {
-				return {...state}
+				return {...state,submited: true}
 			};
 			return {
 				...state,
@@ -38,9 +39,21 @@ const Questionaire = ({pullData}) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		
-		dispatch({ type: "OPEN" })
+		console.log('submited')
+		setCount(getExpectedReturn())
 	};
+
+	function getExpectedReturn() {
+		var count = 0
+		for(let i = 0;i< isChecked.length;i++){
+			for(let j =0;j<isChecked[i].moznosti.length;j++) {
+				if(isChecked[i].moznosti[j].selected === true){
+					count = count + isChecked[i].moznosti[j].value 
+				}
+			}
+		}
+		return count
+	}
 
 	function myCheckboxFunction(e, id, indexInArray) {
 		const checked = e.target.checked;
@@ -97,8 +110,6 @@ const Questionaire = ({pullData}) => {
 			}
 		}
 	}
-
-	
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
@@ -106,10 +117,10 @@ const Questionaire = ({pullData}) => {
 					{
 						isChecked && isChecked.map((item,index) => {
 							if(index === state.slideIndex) {
-								const {id,question,moznosti} = item
+								const {question,moznosti} = item
 								let [a,b,c,d,e] = moznosti
 								return <div key={index}>
-											<Line percent={id * 10} strokeWidth={1} strokeColor="#0065ad" />
+											<Line percent={(state.slideIndex + 1) * 10} strokeWidth={1} strokeColor="#0065ad" />
 											<div className='questionHeading'>{question}</div>
 											<div className="moznosti">
 												<Checkbox label={a.a} onChange={(e) => myCheckboxFunction(e, a.id, index)} disabled={functionToDisable(a.id,index)} />
@@ -122,61 +133,12 @@ const Questionaire = ({pullData}) => {
 							}
 						})
 					}
-					<button type={state.slideIndex === 9 ? 'submit' : 'button'}  className='next' onClick={() => dispatch({ type: "NEXT" })}>{
+					<button type={state.submited === true ? 'submit' : 'button'}  className='next' onClick={() => dispatch({ type: "NEXT" })}>{
 						state.slideIndex === 9 ? 'Submit' : 'Next'
 					}</button>
 				</div>
-				{/* <div className='questions'>
-					{isChecked &&
-            isChecked.map((itemInDotaznik, index) => {
-            	const { moznosti, question } = itemInDotaznik;
-            	const [a, b, c, d, ee] = moznosti;
-            	return (
-            		<div key={index} className='question__container'>
-            			<div className='question'>{question}</div>
-            			<Checkbox
-            				label={a.a}
-            				onChange={(e) => myCheckboxFunction(e, a.id, index)}
-            				disabled={functionToDisable()}
-            			/>
-            			<Checkbox
-            				label={b.b}
-            				onChange={(e) => myCheckboxFunction(e, b.id, index)}
-            				disabled={functionToDisable()}
-            			/>
-            			{c && (
-            				<Checkbox
-            					label={c.c}
-            					onChange={(e) => myCheckboxFunction(e, c.id, index)}
-            					disabled={functionToDisable()}
-            				/>
-            			)}
-            			{d && (
-            				<Checkbox
-            					label={d.d}
-            					checked={d.selected}
-            					onChange={(e) => myCheckboxFunction(e, d.id, index)}
-            					disabled={functionToDisable()}
-            				/>
-            			)}
-
-            			{ee && (
-            				<Checkbox
-            					label={ee.e}
-            					checked={ee.selected}
-            					onChange={(e) => myCheckboxFunction(e, ee.id, index)}
-            					disabled={functionToDisable()}
-            				/>
-            			)}
-            		</div>
-            	);
-            })}
-					{opened && <Modal pullData={pullData} />}
-				</div>
-				<button className='btn-submit' type='submit'>
-          Save
-				</button> */}
 			</form>
+			{state.submited && <TransitionsModal opened={state.submited} count={count}/>}
 		</div>
 	);
 };

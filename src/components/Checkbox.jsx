@@ -10,6 +10,7 @@ const Checkbox = ({checked,onChange,label,disabled}) => {
 };
 
 Checkbox.propTypes = {
+	disabled: PropTypes.bool,
 	checked: PropTypes.bool,
 	onChange: PropTypes.any.isRequired,
 	label: PropTypes.string
