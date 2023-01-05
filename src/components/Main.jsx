@@ -71,11 +71,11 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 
 	return (
 		<div className='container'>
-			<Questionaire pullData={pullData} />
+			<Questionaire />
 			<section className='sliders'>
 				<h1>Investment Calculator</h1>
-				<form onSubmit={onSubmit}>
-					<div className='form-group'>
+				<form onSubmit={onSubmit} >
+					<div className='form-group Area-1'>
 						<label htmlFor='startingBalance'>
 							<FontAwesomeIcon icon={faEuroSign} /> Starting Balance
 						</label>
@@ -86,7 +86,7 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 						/>
 					</div>
 
-					<div className='form-group'>
+					<div className='form-group Area-2'>
 						<label htmlFor='expected return'>
 							<FontAwesomeIcon icon={faPercent} /> Expected Return
 						</label>
@@ -97,7 +97,7 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 						/>
 					</div>
 
-					<div className='form-group'>
+					<div className='form-group Area-3'>
 						<label htmlFor='monthlyDeposit'>
 							<FontAwesomeIcon icon={faCalendarDays} /> Monthly Deposit
 						</label>
@@ -108,7 +108,7 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 						/>
 					</div>
 
-					<div className='form-group'>
+					<div className='form-group Area-4'>
 						<label htmlFor='Duration'>
 							<FontAwesomeIcon icon={faClock} /> Duration (years)
 						</label>
@@ -119,7 +119,9 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 							name='duration'
 						/>
 					</div>
-					<input type='submit' value='Submit' id='submit' />
+					<div className="form-group Area-5">
+						<input type='submit' value='Submit' id='submit' />
+					</div>
 				</form>
 			</section>
 			<div className='graph__container'>

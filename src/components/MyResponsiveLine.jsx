@@ -17,7 +17,7 @@ const MyResponsiveLine = ({ data  }) => (
 		enableArea={true}
 		data={data}
 		colors={{ scheme: 'category10' }}
-		margin={{ top: 50, right: 150, bottom: 50, left: 70 }}
+		margin={{ top: 50, right: 150, bottom: 50, left: 150 }}
 		xScale={{ type: 'point' }}
 		yScale={{
 			type: 'linear',

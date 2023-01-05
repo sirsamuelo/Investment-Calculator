@@ -1,6 +1,7 @@
 /* eslint-disable */
 import './App.css';
 import Main from './components/Main';
+import Intro from './components/Intro';
 
 function App() {
 	function buildValues(
@@ -55,6 +56,7 @@ function App() {
 
 	return (
 		<div className='App'>
+			<Intro />
 			<Main
 				buildValues={buildValues}
 				convertToObj={convertToObj}
