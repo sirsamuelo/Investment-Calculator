@@ -16,9 +16,6 @@ const Questionaire = () => {
 
 	const questionsReducer = (state, event) => {
 		if (event.type === 'CHECK') {
-			// if (state.slideIndex === 9) {
-			// 	return { ...state, submited: true };
-			// }
 			return {
 				...state,
 				slideIndex: 0

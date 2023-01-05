@@ -39,11 +39,11 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 
 		//create desired array from object
 		let desiredData = populateData(objectFromArrays);
-		var testing = [{ id: 'Revenue', color: 'hsl(50, 30%, 50%)' }];
+		var testing = [{ id: 'With investing ', color: 'hsl(50, 30%, 50%)' }];
 		testing[0].data = desiredData;
 
 		//Without expected return
-		testing.push({ id: 'Bez investovanie', color: 'hsl(50, 30%, 50%)' });
+		testing.push({ id: 'Without investing', color: 'hsl(50, 30%, 50%)' });
 		balances = [];
 		labels = [];
 		buildValues(
@@ -127,7 +127,7 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 					<FontAwesomeIcon icon={faChartSimple} /> Growth Chart
 				</h2>
 				<h4>
-          Total value <span className='span'>{finalAmount}€</span> in{' '}
+					Total value <span className='span'>{finalAmount}€</span> in{' '}
 					<span className='span'>{duration} years</span>
 				</h4>
 				<MyResponsiveLine data={myData} />

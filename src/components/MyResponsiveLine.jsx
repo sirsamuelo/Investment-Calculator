@@ -17,7 +17,7 @@ const MyResponsiveLine = ({ data  }) => (
 		enableArea={true}
 		data={data}
 		colors={{ scheme: 'category10' }}
-		margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+		margin={{ top: 50, right: 150, bottom: 50, left: 70 }}
 		xScale={{ type: 'point' }}
 		yScale={{
 			type: 'linear',
@@ -30,11 +30,11 @@ const MyResponsiveLine = ({ data  }) => (
 		axisRight={null}
 		axisBottom={{
 			orient: 'bottom',
-			tickSize: 5,
-			tickPadding: 5,
+			tickSize: 1,
+			tickPadding: 1,
 			tickRotation: 0,
 			legend: 'Duration',
-			legendOffset: 36,
+			legendOffset: 35,
 			legendPosition: 'middle'
 		}}
 		axisLeft={{
@@ -42,26 +42,25 @@ const MyResponsiveLine = ({ data  }) => (
 			tickSize: 5,
 			tickPadding: 10,
 			tickRotation: 0,
-			legend: 'amount €',
-			legendOffset: -50,
-			legendPosition: 'end'
+			legend: 'Money €',
+			legendOffset: -60,
+			legendPosition: 'middle'
 
 		}}
-		lineWidth={3}
+		lineWidth={4}
 		pointSize={5}
 		pointColor={{ theme: 'background' }}
 		pointBorderWidth={5}
 		pointBorderColor={{ from: 'serieColor' }}
 		pointLabelYOffset={12}
-		useMesh={true}
-        
+		useMesh={false} //true ? 
 		legends={[
 			{
-				anchor: 'bottom-right',
+				anchor: 'top',
 				direction: 'column',
 				justify: false,
-				translateX: 100,
-				translateY: 0,
+				translateX: 0,
+				translateY: -50,
 				itemsSpacing: 0,
 				itemDirection: 'left-to-right',
 				itemWidth: 80,

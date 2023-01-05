@@ -45,7 +45,7 @@ export default function TransitionsModal({opened,count}) {
               Expected Return
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Your yearly expected return should be {count}
+              Your yearly expected return should be {count}%.
             </Typography>
           </Box>
         </Fade>

@@ -19,21 +19,18 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .container {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   height: 140vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 120px;
 }
 
 .sliders {
   width: 100%;
-  height: 35vh;
+  height: 20vh;
   background-color: var(--light-blue);
-  padding-bottom: 100px;
-
 }
 .sliders h1 {
   font-size: 2rem;
