@@ -94,7 +94,7 @@ body {
   height: 70vh;
   width: 100%;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 .graph__container h2 {
   color: var(--dark-2-blue);
@@ -252,7 +252,25 @@ box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
     width: 100%;
   }
   .graph__container {
-    margin-top: 350px;
+    margin-top: 400px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .questions__container {
+    width: 400px;
+  }
+  .questions__container .questionHeading {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .questions__container {
+    width: 300px;
+  }
+  .questions__container .questionHeading {
+    font-size: 1rem;
   }
 }
 

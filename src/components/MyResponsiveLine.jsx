@@ -53,7 +53,7 @@ const MyResponsiveLine = ({ data  }) => (
 		pointBorderWidth={5}
 		pointBorderColor={{ from: 'serieColor' }}
 		pointLabelYOffset={12}
-		useMesh={false} //true ? 
+		useMesh={true} //true ? 
 		legends={[
 			{
 				anchor: 'top',
