@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import MyResponsiveLine from './MyResponsiveLine';
@@ -20,7 +19,7 @@ const Main = () => {
 	const [duration, setDuration] = useState(0);
 	const [finalAmount, setFinalAmount] = useState(0);
 	const [myData, setMyData] = useState([]);
-	const [data,setData] = useState(null)
+	const [data,setData] = useState(0)
 
 	const handleData = (newData) => {
 		setData(newData);
@@ -153,7 +152,7 @@ const Main = () => {
 						</label>
 						<input
 							type='text'
-							value={data}
+							value={expectedReturn === 0 ? data : expectedReturn}
 							onChange={(e) => setExpectedReturn(e.target.value)}
 						/>
 					</div>

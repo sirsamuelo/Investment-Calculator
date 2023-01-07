@@ -5,10 +5,6 @@
 // import Pc from '../figma/Pc.png';
 // import Rug from '../figma/Rug.png';
 // import Table from '../figma/Table.png';
-// import { SlideInRight } from 'react-animated-components';
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { faThermometer1 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Intro = () => {
