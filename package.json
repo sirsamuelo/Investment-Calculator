@@ -16,6 +16,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "gsap": "npm:@gsap/member@^3.11.4",
     "rc-progress": "^3.4.1",
     "react": "^18.2.0",
     "react-animated-components": "^4.0.0",
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "eslint": "^8.28.0",
-    "eslint-plugin-react": "^7.31.11"
+    "eslint-plugin-react": "^7.31.11",
+    "react-router-dom": "^6.6.1"
   }
 }

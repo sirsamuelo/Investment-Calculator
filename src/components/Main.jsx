@@ -1,5 +1,5 @@
 /* eslint-disable */
-import  { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import MyResponsiveLine from './MyResponsiveLine';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,14 +11,61 @@ import {
 	faChartSimple,
 } from '@fortawesome/free-solid-svg-icons';
 import Questionaire from './Questionaire';
+import { Link } from 'react-router-dom';
 
-const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
+const Main = () => {
 	const [startingBalance, setStartingBalance] = useState(0);
 	const [expectedReturn, setExpectedReturn] = useState(0);
 	const [monthlyDeposit, setMonthlyDeposit] = useState(0);
 	const [duration, setDuration] = useState(0);
 	const [finalAmount, setFinalAmount] = useState(0);
 	const [myData, setMyData] = useState([]);
+
+	function buildValues(
+		labels,
+		balances,
+		duration,
+		startingBalance,
+		monthlyReturn = 0,
+		monthlyDeposit
+	) {
+		for (let i = 0; i <= duration * 12; i++) {
+			if (i === 0) {
+				balances.push(Number(startingBalance).toFixed(2));
+				labels.push('Year 0');
+			}
+			startingBalance = startingBalance * (1 + monthlyReturn) + monthlyDeposit;
+			if (i % 12 === 0) {
+				const year = i / 12;
+				balances.push(Number(startingBalance).toFixed(2));
+				labels.push(`Year ${year}`);
+			}
+		}
+	}
+
+	function convertToObj(a, b) {
+		if (a.length !== b.length || a.length === 0 || b.length === 0) {
+			return null;
+		}
+		let obj = {};
+		a.forEach((k, i) => {
+			obj[k] = b[i];
+		});
+		return obj;
+	}
+
+	function populateData(obj) {
+		const values = Object.values(obj);
+		const keys = Object.keys(obj);
+		var data = [];
+		for (let i = 0; i < values.length; i++) {
+			data.push({
+				x: keys[i],
+				y: values[i],
+			});
+		}
+		return data;
+	}
 
 	function onSubmit(e) {
 		e.preventDefault();
@@ -54,7 +101,6 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 			undefined,
 			+monthlyDeposit
 		);
-		console.log(balances);
 		const newObjectFrom = convertToObj(labels, balances);
 		desiredData = populateData(newObjectFrom);
 		testing[1].data = desiredData;
@@ -71,10 +117,20 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 
 	return (
 		<div className='container'>
+			<Link to='/'>
+				<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
+					<span>G</span>
+					<span>O </span>
+					<span>B</span>
+					<span>A</span>
+					<span>C</span>
+					<span>K</span>
+				</button>
+			</Link>
 			<Questionaire />
 			<section className='sliders'>
 				<h1>Investment Calculator</h1>
-				<form onSubmit={onSubmit} >
+				<form onSubmit={onSubmit}>
 					<div className='form-group Area-1'>
 						<label htmlFor='startingBalance'>
 							<FontAwesomeIcon icon={faEuroSign} /> Starting Balance
@@ -119,7 +175,7 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 							name='duration'
 						/>
 					</div>
-					<div className="form-group Area-5">
+					<div className='form-group Area-5'>
 						<input type='submit' value='Submit' id='submit' />
 					</div>
 				</form>
@@ -138,13 +194,10 @@ const Main = ({ buildValues, convertToObj, populateData,pullData }) => {
 	);
 };
 
-
 Main.propTypes = {
-	convertToObj: PropTypes.func ,
+	convertToObj: PropTypes.func,
 	populateData: PropTypes.func,
-	buildValues: PropTypes.func
+	buildValues: PropTypes.func,
 };
-
-
 
 export default Main;
