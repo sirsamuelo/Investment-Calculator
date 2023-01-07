@@ -158,6 +158,34 @@ const Intro = () => {
 					</div>
 				</div>
 			</div>
+			<div className='skw-page skw-page-6'>
+				<div className='skw-page__half skw-page__half--left'>
+					<div className='skw-page__skewed'>
+						<div className='skw-page__content'></div>
+					</div>
+				</div>
+				<div className='skw-page__half skw-page__half--right'>
+					<div className='skw-page__skewed'>
+						<div className='skw-page__content'>
+							<h2 className='skw-page__heading'>
+								Show yourself capable in world of finance !
+							</h2>
+							<p className='skw-page__description'>
+								Feel free to check
+								<Link to="/main">
+								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
+									<span>H</span>
+									<span>E</span>
+									<span>L</span>
+									<span>L</span>
+									<span>O</span>
+								</button>
+								</Link>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
