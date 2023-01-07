@@ -75,7 +75,8 @@ const Main = () => {
 		e.preventDefault();
 		let balances = [];
 		let labels = [];
-		const monthlyReturn = expectedReturn / 100 / 12;
+		if(data !== 0) {
+			const monthlyReturn = data / 100 / 12;
 		buildValues(
 			labels,
 			balances,
@@ -85,6 +86,18 @@ const Main = () => {
 			+monthlyDeposit
 		);
 
+		} else {
+			const monthlyReturn = expectedReturn / 100 / 12;
+		buildValues(
+			labels,
+			balances,
+			+duration,
+			+startingBalance,
+			+monthlyReturn,
+			+monthlyDeposit
+		);
+
+		}
 		//Create object from two arrays of labels and balances
 		const objectFromArrays = convertToObj(labels, balances);
 
