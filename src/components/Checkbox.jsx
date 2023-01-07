@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-const Checkbox = ({checked,onChange,label,disabled}) => {
+const Checkbox = ({onChange,label,disabled}) => {
 	return (
 		<label className='question__label'>
-			<input type="checkbox"  checked={checked} onChange={onChange} className='checkboxInput' disabled={disabled} />
+			<input type="checkbox"  onChange={onChange} className='checkboxInput' disabled={disabled} />
 			{label}
 		</label>
 	);

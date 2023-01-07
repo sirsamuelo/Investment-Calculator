@@ -4,10 +4,11 @@ import Checkbox from './Checkbox.jsx';
 import TransitionsModal from './TransitionsModal.jsx';
 import { Line } from 'rc-progress';
 
-const Questionaire = () => {
+const Questionaire = ({onData}) => {
 	const [isChecked, setIsChecked] = useState([]);
 	const [count, setCount] = useState(0);
 
+	onData(count)
 	const initialState = {
 		slideIndex: 0,
 		submited: false,
@@ -46,7 +47,6 @@ const Questionaire = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('submited');
 		setCount(getExpectedReturn());
 	};
 
@@ -100,6 +100,7 @@ const Questionaire = () => {
 		for (let i = 0; i < isChecked.length; i++) {
 			if (i === otazkaId && isChecked[i].selected === true) {
 				let [a, b, c, d, e] = isChecked[i].moznosti;
+				console.log(moznostId)
 				switch (moznostId) {
 					case 1:
 						return !a.selected;
@@ -111,26 +112,11 @@ const Questionaire = () => {
 						return !d.selected;
 					case 5:
 						return !e.selected;
-					default:
-						return false;
 				}
 			}
 		}
 	}
 
-	function getCount(){
-		let count = 0;
-		for (let i = 0; i < isChecked.length; i++) {
-			if(isChecked[i].selected === true) {
-				count++
-			}
-		}
-		console.log(count)
-		if(count < 10 ) {
-			return true
-		} 
-		return false;
-	}
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
@@ -151,7 +137,7 @@ const Questionaire = () => {
 										<div className='moznosti'>
 											<Checkbox
 												label={a.a}
-												onChange={(e) =>  myCheckboxFunction(e, b.id, index)}
+												onChange={(e) =>  myCheckboxFunction(e, a.id, index)}
 												disabled={functionToDisable(a.id, index)}
 											/>
 											<Checkbox

@@ -20,6 +20,11 @@ const Main = () => {
 	const [duration, setDuration] = useState(0);
 	const [finalAmount, setFinalAmount] = useState(0);
 	const [myData, setMyData] = useState([]);
+	const [data,setData] = useState(null)
+
+	const handleData = (newData) => {
+		setData(newData);
+	  }
 
 	function buildValues(
 		labels,
@@ -127,7 +132,7 @@ const Main = () => {
 					<span>K</span>
 				</button>
 			</Link>
-			<Questionaire />
+			<Questionaire onData={handleData}/>
 			<section className='sliders'>
 				<h1>Investment Calculator</h1>
 				<form onSubmit={onSubmit}>
@@ -148,7 +153,7 @@ const Main = () => {
 						</label>
 						<input
 							type='text'
-							value={expectedReturn}
+							value={data}
 							onChange={(e) => setExpectedReturn(e.target.value)}
 						/>
 					</div>
