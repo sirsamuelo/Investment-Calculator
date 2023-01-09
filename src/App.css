@@ -641,7 +641,7 @@ body {
 
 .footer {
   margin-top: 100px;
-  height: 30vh; 
+  height: 15vh; 
   width: 100%;
   background-color: var(--dark-2-blue);
 }
