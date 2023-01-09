@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect,useRef } from 'react';
 import PropTypes from 'prop-types';
 import MyResponsiveLine from './MyResponsiveLine';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +10,7 @@ import {
 	faChartSimple,
 } from '@fortawesome/free-solid-svg-icons';
 import Questionaire from './Questionaire';
+import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 
 const Main = () => {
@@ -20,6 +21,29 @@ const Main = () => {
 	const [finalAmount, setFinalAmount] = useState(0);
 	const [myData, setMyData] = useState([]);
 	const [data,setData] = useState(0)
+	const [email,setEmail] = useState('')
+	const myRef = useRef(null)
+	const form = new FormData();
+	const forming = document.getElementById('tlak')
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+		document.getElementById('finalAmount').value = finalAmount;
+		document.getElementById('duration').value = duration;
+		document.getElementById('monthlyDeposit').value = monthlyDeposit;
+		document.getElementById('startingBalance').value = startingBalance;
+		document.getElementById('expectedReturn').value = expectedReturn;
+		console.log(form)
+		emailjs.sendForm('service_dfxpa4s', 'template_phdxw95', myRef.current, 'esHJQeixPrRMcTtj_')
+			.then((result) => {
+				console.log(result.text);
+				console.log("form sent successfuly")
+				console.log(myRef.current)
+			}, (error) => {
+				console.log(error.text);
+			});
+
+	};
 
 	const handleData = (newData) => {
 		setData(newData);
@@ -132,6 +156,17 @@ const Main = () => {
 		container.style.display = 'block';
 	}
 
+	useEffect(() => {
+		const setMyRef = (element) => {
+			myRef.current = element
+		}
+		setMyRef(forming)
+	},[])
+
+	const setMyRef = (element) => {
+		myRef.current = element
+	}
+
 	return (
 		<div className='container'>
 			<Link to='/'>
@@ -207,6 +242,62 @@ const Main = () => {
 				</h4>
 				<MyResponsiveLine data={myData} />
 			</div>
+
+			<form ref={myRef} onSubmit={sendEmail} id="tlak">
+					<div className='form-group'>
+						<label htmlFor='mail'>
+							<FontAwesomeIcon icon={faChartSimple} /> Send your data to your e-mail address
+						</label>
+						<input
+							type='email'
+							name="user_email"
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
+						/>
+					</div>
+
+					<div className='form-group'>
+						<input
+							name="finalAmount"
+							type="hidden"
+							id="finalAmount"
+						/>
+					</div>
+
+					<div className='form-group'>
+						<input
+							name="duration"
+							type="hidden"
+							id="duration"
+						/>
+					</div>
+
+					<div className='form-group'>
+						<input
+							name="monthlyDeposit"
+							type="hidden"
+							id="monthlyDeposit"
+						/>
+					</div>
+
+					<div className='form-group'>
+						<input
+							name="startingBalance"
+							type="hidden"
+							id="startingBalance"
+						/>
+					</div>
+
+					<div className='form-group'>
+						<input
+							name="expectedReturn"
+							type="hidden"
+							id="expectedReturn"
+						/>
+					</div>
+
+					<input type='submit' value='Send mail' id='submit' />
+				</form>
 		</div>
 	);
 };

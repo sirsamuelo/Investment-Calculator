@@ -23,7 +23,9 @@
   border-radius: 7px;
 }
 body {
-  background-color: var(--light-blue);
+  background-size: 100% 100%;
+background-position: 0px 0px;
+background-image: radial-gradient(75% 75% at 50% 50%, #bce4fa 0%, #00437BFF 100%);
   font-family: 'Roboto', sans-serif;
   /* margin: 0;
   min-height: 100vh;
@@ -41,7 +43,7 @@ body {
 .sliders {
   width: 100%;
   height: 20vh;
-  background-color: var(--light-blue);
+  background-color: transparent;
 }
 .sliders h1 {
   font-size: 2rem;
@@ -634,4 +636,16 @@ body {
 .button--nanuk:hover > span:nth-child(11) {
 	-webkit-animation-delay: 0.5s;
 	animation-delay: 0.5s;
+}
+
+
+#tlak {
+  margin-top: 100px;
+}
+#tlak .form-group:first-child {
+  display: flex;
+}
+
+#tlak .form-group {
+  display: none;
 }
