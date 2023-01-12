@@ -130,6 +130,8 @@ const Main = () => {
 		var testing = [{ id: 'With investing ', color: 'hsl(50, 30%, 50%)' }];
 		testing[0].data = desiredData;
 
+	
+
 		//Without expected return
 		testing.push({ id: 'Without investing', color: 'hsl(50, 30%, 50%)' });
 		balances = [];
@@ -295,7 +297,6 @@ const Main = () => {
 							id="expectedReturn"
 						/>
 					</div>
-
 					<input type='submit' value='Send mail' id='submit' />
 				</form>
 		</div>

@@ -5,6 +5,7 @@
 // import Pc from '../figma/Pc.png';
 // import Rug from '../figma/Rug.png';
 // import Table from '../figma/Table.png';
+import qrhouse from '../figma/qrhouse.png'
 import { Link } from 'react-router-dom';
 
 const Intro = () => {
@@ -107,7 +108,7 @@ const Intro = () => {
 						<div className='skw-page__content'>
 							<h2 className='skw-page__heading'>Page 3</h2>
 							<p className='skw-page__description'>
-								The end is near, I promise!
+								Tu budu informácie ohladom investovanie ako a prečo investovat
 							</p>
 						</div>
 					</div>
@@ -117,9 +118,17 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--left'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>Page 4</h2>
+						<h2 className='skw-page__heading'>
+								Show yourself capable in world of finance !
+							</h2>
 							<p className='skw-page__description'>
-								Ok, ok, just one more scroll!
+								Feel free to check
+								<Link to="/main"><br/>
+								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick' style={{ marginTop: '20px'}}>
+									<span>Investment</span>
+									<span>Calculator</span>
+								</button>
+								</Link>
 							</p>
 						</div>
 					</div>
@@ -133,55 +142,21 @@ const Intro = () => {
 			<div className='skw-page skw-page-5'>
 				<div className='skw-page__half skw-page__half--left'>
 					<div className='skw-page__skewed'>
-						<div className='skw-page__content'></div>
-					</div>
-				</div>
-				<div className='skw-page__half skw-page__half--right'>
-					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>
-								Show yourself capable in world of finance !
-							</h2>
-							<p className='skw-page__description'>
-								Feel free to check
-								<Link to="/main">
-								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
-									<span>H</span>
-									<span>E</span>
-									<span>L</span>
-									<span>L</span>
-									<span>O</span>
-								</button>
-								</Link>
-							</p>
+							<img 
+								className='qrhouse'
+								src={qrhouse}
+							/>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className='skw-page skw-page-6'>
-				<div className='skw-page__half skw-page__half--left'>
-					<div className='skw-page__skewed'>
-						<div className='skw-page__content'></div>
-					</div>
-				</div>
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
 							<h2 className='skw-page__heading'>
-								Show yourself capable in world of finance !
+								Lets see what you can buy in future with your investment
 							</h2>
-							<p className='skw-page__description'>
-								Feel free to check
-								<Link to="/main">
-								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
-									<span>H</span>
-									<span>E</span>
-									<span>L</span>
-									<span>L</span>
-									<span>O</span>
-								</button>
-								</Link>
-							</p>
+						
 						</div>
 					</div>
 				</div>
