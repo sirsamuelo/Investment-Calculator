@@ -3,23 +3,26 @@ import dotaznik from '../sample.js';
 import Checkbox from './Checkbox.jsx';
 import TransitionsModal from './TransitionsModal.jsx';
 import { Line } from 'rc-progress';
+import Button from '@mui/material/Button';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
 
-const Questionaire = ({onData}) => {
+const Questionaire = ({ onData }) => {
 	const [isChecked, setIsChecked] = useState([]);
 	const [count, setCount] = useState(0);
 
-	onData(count)
+	onData(count);
 	const initialState = {
 		slideIndex: 0,
 		submited: false,
-		isChecked: dotaznik
+		isChecked: dotaznik,
 	};
 
 	const questionsReducer = (state, event) => {
 		if (event.type === 'CHECK') {
 			return {
 				...state,
-				slideIndex: 0
+				slideIndex: 0,
 			};
 		}
 		if (event.type === 'NEXT') {
@@ -100,7 +103,7 @@ const Questionaire = ({onData}) => {
 		for (let i = 0; i < isChecked.length; i++) {
 			if (i === otazkaId && isChecked[i].selected === true) {
 				let [a, b, c, d, e] = isChecked[i].moznosti;
-				console.log(moznostId)
+				console.log(moznostId);
 				switch (moznostId) {
 					case 1:
 						return !a.selected;
@@ -137,7 +140,7 @@ const Questionaire = ({onData}) => {
 										<div className='moznosti'>
 											<Checkbox
 												label={a.a}
-												onChange={(e) =>  myCheckboxFunction(e, a.id, index)}
+												onChange={(e) => myCheckboxFunction(e, a.id, index)}
 												disabled={functionToDisable(a.id, index)}
 											/>
 											<Checkbox
@@ -171,14 +174,16 @@ const Questionaire = ({onData}) => {
 								);
 							}
 						})}
-					<button
-						type={state.submited === true ? 'submit' : 'button'}
-						className='next'
+
+					<Button
+						variant='contained'
+						endIcon={state.slideIndex !== 9 ? <ArrowRightAltIcon /> : <DoneOutlinedIcon /> }
 						onClick={() => dispatch({ type: 'NEXT' })}
+						type={state.submited === true ? 'submit' : 'button'}
 					>
 						{state.slideIndex === 9 ? 'Submit' : 'Next'}
-					</button>
-					{/* {getCount() && state.slideIndex === 9 && <button onClick={() => dispatch({ type: 'CHECK' })}>Start Again</button>} */}
+						{/* {getCount() && state.slideIndex === 9 && <button onClick={() => dispatch({ type: 'CHECK' })}>Start Again</button>} */}
+					</Button>
 				</div>
 			</form>
 			{state.submited && (

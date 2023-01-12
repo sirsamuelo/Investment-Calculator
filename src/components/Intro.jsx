@@ -1,10 +1,3 @@
-// import Graduate from '../figma/Graduate.png';
-// import Boy from '../figma/Boy.png';
-// import Clock from '../figma/Clock.png';
-// import Couch from '../figma/Couch.png';
-// import Pc from '../figma/Pc.png';
-// import Rug from '../figma/Rug.png';
-// import Table from '../figma/Table.png';
 import { Link } from 'react-router-dom';
 
 const Intro = () => {
