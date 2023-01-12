@@ -1,5 +1,5 @@
 import { Box, Text, Scene, MarkerCamera } from "react-aframe-ar";
-import parcel from './gltf/field.glb';
+import parcel from './gltf/teren.glb';
 
 function Field() {
   return (
