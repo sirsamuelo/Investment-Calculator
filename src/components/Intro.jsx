@@ -1,3 +1,11 @@
+// import Graduate from '../figma/Graduate.png';
+// import Boy from '../figma/Boy.png';
+// import Clock from '../figma/Clock.png';
+// import Couch from '../figma/Couch.png';
+// import Pc from '../figma/Pc.png';
+// import Rug from '../figma/Rug.png';
+// import Table from '../figma/Table.png';
+import qrhouse from '../figma/qrhouse.png'
 import { Link } from 'react-router-dom';
 
 const Intro = () => {
@@ -63,9 +71,9 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>This is Jacob.</h2>
+							<h2 className='skw-page__heading'>Hello, my name is Jacob and I just graduated.</h2>
 							<p className='skw-page__description'>
-								He just finished graduation and wonders what comes next.
+								I found nice job wtih good income, I do not know what to do with my money!
 							</p>
 						</div>
 					</div>
@@ -75,9 +83,9 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--left'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>Jacob is lost.</h2>
+							<h2 className='skw-page__heading'></h2>
 							<p className='skw-page__description'>
-								Lets show him some benefits of investing
+								I don´t have any financial education, but one thing I know I want to invest them!
 							</p>
 						</div>
 					</div>
@@ -98,9 +106,12 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>Page 3</h2>
+							<h2 className='skw-page__heading'>Why should I invest?</h2>
 							<p className='skw-page__description'>
-								The end is near, I promise!
+							Investing is a way to grow your money over time by putting it into assets that have the potential to increase in value. 
+							This can include stocks, bonds, real estate, and more. Investing can help you reach your financial goals, 
+							such as saving for retirement or buying a house.
+						
 							</p>
 						</div>
 					</div>
@@ -110,15 +121,25 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--left'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>Page 4</h2>
+							<h2 className='skw-page__heading'>Where should I invest?</h2>
+							<h2 className='h2_heading'>1. STOCKS</h2>
 							<p className='skw-page__description'>
-								Ok, ok, just one more scroll!
+							Investing in stocks, is a way to own a piece of a publicly traded company. When you buy a stock, you become a shareholder, and your investment can increase in value if the company performs well.
+							</p>
+							<h2 className='h2_heading'>2. BONDS</h2>
+							<p className='skw-page__description'>
+							Bonds are a type of debt security issued by companies or governments. When you invest in a bond, you're essentially lending money to the issuer in exchange for periodic interest payments and the return of principal at maturity.
+							</p>
+							<h2 className='h2_heading'>3. REAL ESTATE</h2>
+							<p className='skw-page__description'>
+							Real estate can provide a steady stream of income through rent, and the potential for appreciation in value over time.
 							</p>
 						</div>
 					</div>
 				</div>
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
+						<div className="overlay"></div>							
 						<div className='skw-page__content'></div>
 					</div>
 				</div>
@@ -126,55 +147,26 @@ const Intro = () => {
 			<div className='skw-page skw-page-5'>
 				<div className='skw-page__half skw-page__half--left'>
 					<div className='skw-page__skewed'>
-						<div className='skw-page__content'></div>
-					</div>
-				</div>
-				<div className='skw-page__half skw-page__half--right'>
-					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>
-								Show yourself capable in world of finance !
-							</h2>
-							<p className='skw-page__description'>
-								Feel free to check
-								<Link to="/main">
-								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
-									<span>H</span>
-									<span>E</span>
-									<span>L</span>
-									<span>L</span>
-									<span>O</span>
-								</button>
-								</Link>
-							</p>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className='skw-page skw-page-6'>
-				<div className='skw-page__half skw-page__half--left'>
-					<div className='skw-page__skewed'>
-						<div className='skw-page__content'></div>
-					</div>
-				</div>
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<h2 className='skw-page__heading'>
+						<h2 className='skw-page__heading'>
 								Show yourself capable in world of finance !
 							</h2>
 							<p className='skw-page__description'>
 								Feel free to check
-								<Link to="/main">
-								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
-									<span>H</span>
-									<span>E</span>
-									<span>L</span>
-									<span>L</span>
-									<span>O</span>
+								<Link to="/main"><br/>
+								<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick' style={{ marginTop: '20px'}}>
+									<span>Investment</span>
+									<span>Calculator</span>
 								</button>
 								</Link>
 							</p>
+						
 						</div>
 					</div>
 				</div>
