@@ -385,16 +385,19 @@ body {
   text-align: center;
 }
 .skw-page__description {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
+}
+.h2_heading{
+  margin: 15px;
 }
 .skw-page__link {
   color: #FFA0A0;
 }
 .skw-page-1 .skw-page__half--left .skw-page__content {
-  background-image: url("https://images.pexels.com/photos/4842659/pexels-photo-4842659.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-image: url("https://static.vecteezy.com/system/resources/previews/002/241/375/large_2x/the-happy-guy-graduated-from-an-educational-institution-vector.jpg");
   background-position: center;
 }
 .skw-page-1 .skw-page__half--right .skw-page__content {
@@ -410,7 +413,9 @@ body {
 }
 
 .skw-page-3 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg");
+  background-image: url("https://www.investsmall.co/wp-content/uploads/2020/11/fin-investment-1024x683.jpg");
+  background-position: center center;
+  opacity: 0.7;
 }
 .skw-page-3 .skw-page__half--right .skw-page__content {
   background: var(--light-blue);
@@ -419,10 +424,10 @@ body {
   background: var(--light-blue);
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg");
+  background-image: url("https://journal.firsttuesday.us/wp-content/uploads/Investing-Stocks-or-Real-Estate.png");
 }
 .skw-page-5 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
+  background-image: url("https://image.freepik.com/free-photo/happy-financial-agent-smiling_256588-509.jpg");
 }
 .skw-page-5 .skw-page__half--right .skw-page__content {
   background: var(--light-blue);
