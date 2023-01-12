@@ -1,5 +1,5 @@
 import { Box, Text, Scene, MarkerCamera } from "react-aframe-ar";
-import parcel from './gltf/field.glb';
+import parcel from './gltf/teren.glb';
 
 function Field() {
   return (
@@ -9,8 +9,8 @@ function Field() {
           <a-marker preset="hiro">
           <a-entity
             rotation="90 0 180"
-            position="0 -10 0" 
-            scale="20 20 20"
+            position="0 -3 0" 
+            scale="0.2 0.2 0.2"
             // light="type: ambient; color: #FFF; intensity: 10"
             // material="shader: flat"
             gltf-model={parcel}
@@ -19,7 +19,6 @@ function Field() {
           <a-entity camera>
             <a-cursor></a-cursor>
           </a-entity>
-          <a-asset-item src={msg}></a-asset-item>
         </a-scene>
     </div>
   </div>
