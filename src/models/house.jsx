@@ -1,5 +1,5 @@
 import { Box, Text, Scene, MarkerCamera } from "react-aframe-ar";
-import home from './gltf/Cottage.gltf';
+import home from './gltf/home.glb';
 
 function House() {
   return (
@@ -9,9 +9,9 @@ function House() {
           <a-marker preset="hiro">
           {/* <a-light type="directional" position="0 0 0" rotation="-90 0 0" target="#directionaltarget"> */}
           <a-entity
-            rotation="110 270 90"
-            position="0 -10 0"
-            scale="0.8 0.6 0.6"
+            rotation="90 270 90"
+            position="3 0 0"
+            scale="0.5 0.3 0.3"
             id="directionaltarget"
             gltf-model={home}
             ></a-entity>

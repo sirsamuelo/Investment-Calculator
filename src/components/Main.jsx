@@ -1,15 +1,26 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import MyResponsiveLine from './MyResponsiveLine';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Input from '@mui/joy/Input';
+
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import TextField from '@mui/material/TextField';
+import { spacing } from '@mui/system';
+import InputLabel from '@mui/material/InputLabel';
+import EmailIcon from '@mui/icons-material/Email';
+import { CssTextField } from './CssTextField';
 import {
 	faEuroSign,
 	faPercent,
 	faCalendarDays,
 	faClock,
 	faChartSimple,
-	faEnvelope
+	faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
+import InputAdornment from '@mui/material/InputAdornment';
 import Questionaire from './Questionaire';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
@@ -43,14 +54,14 @@ const Main = () => {
 			)
 			.then(
 				(result) => {
-					console.log('Email sent')
+					console.log('Email sent');
 				},
 				(error) => {
 					console.log(error.text);
 				}
 			);
-			setEmail('')
-		};
+		setEmail('');
+	};
 
 	const handleData = (newData) => {
 		setData(newData);
@@ -167,74 +178,75 @@ const Main = () => {
 		myRef.current = element;
 	};
 	setMyRef(forming);
-	// useEffect(() => {
-	// 	const setMyRef = (element) => {
-	// 		myRef.current = element
-	// 	}
-	// 	setMyRef(forming)
-	// },[])
 	return (
 		<div className='container'>
-			<Link to='/'>
-				<button className='button button--nanuk button--text-thick button--text-upper button--size-s button--border-thick'>
-					<span>G</span>
-					<span>O </span>
-					<span>B</span>
-					<span>A</span>
-					<span>C</span>
-					<span>K</span>
-				</button>
-			</Link>
-			<Questionaire onData={handleData} />
+			<div className="questionaire_container">
+				<Link
+					to='/'
+					style={{
+						textDecoration: 'none',
+						margin: '1rem',
+					}}
+					id='back'
+				>
+					<Button variant='contained'>Go Back</Button>
+				</Link>
+				<Questionaire onData={handleData} />
+			</div>
 			<section className='sliders'>
 				<h1>Investment Calculator</h1>
 				<form onSubmit={onSubmit}>
-					<div className='form-group Area-1'>
-						<label htmlFor='startingBalance'>
-							<FontAwesomeIcon icon={faEuroSign} /> Starting Balance
-						</label>
-						<input
+					<div className='Area-1'>
+						<TextField
+							label='Starting Balance'
+							variant='outlined'
 							type='text'
 							value={startingBalance}
 							onChange={(e) => setStartingBalance(e.target.value)}
+							sx={{ m: '1rem' }}
+							required
 						/>
 					</div>
 
-					<div className='form-group Area-2'>
-						<label htmlFor='expected return'>
-							<FontAwesomeIcon icon={faPercent} /> Expected Return
-						</label>
-						<input
+					<div className='Area-2'>
+						<TextField
+							label='Expected Return'
+							variant='outlined'
 							type='text'
 							value={expectedReturn === 0 ? data : expectedReturn}
 							onChange={(e) => setExpectedReturn(e.target.value)}
+							sx={{ m: '1rem' }}
+							required
 						/>
 					</div>
 
-					<div className='form-group Area-3'>
-						<label htmlFor='monthlyDeposit'>
-							<FontAwesomeIcon icon={faCalendarDays} /> Monthly Deposit
-						</label>
-						<input
+					<div className='Area-3'>
+						<TextField
+							label='Monthly Deposit'
+							variant='outlined'
 							type='text'
 							value={monthlyDeposit}
 							onChange={(e) => setMonthlyDeposit(e.target.value)}
+							sx={{ m: '1rem' }}
+							required
 						/>
 					</div>
 
-					<div className='form-group Area-4'>
-						<label htmlFor='Duration'>
-							<FontAwesomeIcon icon={faClock} /> Duration (years)
-						</label>
-						<input
+					<div className='Area-4'>
+						<TextField
+							label='Duration'
+							variant='outlined'
 							type='text'
 							value={duration}
 							onChange={(e) => setDuration(e.target.value)}
-							name='duration'
+							sx={{ m: '1rem' }}
+							required
 						/>
 					</div>
-					<div className='form-group Area-5'>
-						<input type='submit' value='Submit' id='submit' />
+					<div className='Area-5'>
+						<Button variant='contained' type='submit' style={{ width: '100%' }}>
+							submit
+						</Button>
 					</div>
 				</form>
 			</section>
@@ -249,44 +261,52 @@ const Main = () => {
 				<MyResponsiveLine data={myData} />
 			</div>
 			<section className='footer'>
-				<div className="footer_container">
+				<div className='footer_container'>
+					<form ref={myRef} onSubmit={sendEmail} id='tlak'>
+						<div>
+							<Input
+								color='neutral'
+								disabled={false}
+								placeholder='Enter your email...'
+								size='md'
+								variant='plain'
+								type='email'
+								name='user_email'
+								onChange={(e) => setEmail(e.target.value)}
+								value={email}
+								style={{color: 'white',border: '1px solid white'}}
+								className="sendMailInput"
+							/>
+						</div>
 
-				<form ref={myRef} onSubmit={sendEmail} id='tlak'>
-					<div className='form-group'>
-						<label htmlFor='mail'>
-							<FontAwesomeIcon icon={faEnvelope} /> Send your data to your
-							e-mail address
-						</label>
-						<input
-							type='email'
-							name='user_email'
-							onChange={(e) => setEmail(e.target.value)}
-							value={email}
-						/>
-					</div>
+						<div className='form-group'>
+							<input name='finalAmount' type='hidden' id='finalAmount' />
+						</div>
 
-					<div className='form-group'>
-						<input name='finalAmount' type='hidden' id='finalAmount' />
-					</div>
+						<div className='form-group'>
+							<input name='duration' type='hidden' id='duration' />
+						</div>
 
-					<div className='form-group'>
-						<input name='duration' type='hidden' id='duration' />
-					</div>
+						<div className='form-group'>
+							<input name='monthlyDeposit' type='hidden' id='monthlyDeposit' />
+						</div>
 
-					<div className='form-group'>
-						<input name='monthlyDeposit' type='hidden' id='monthlyDeposit' />
-					</div>
+						<div className='form-group'>
+							<input
+								name='startingBalance'
+								type='hidden'
+								id='startingBalance'
+							/>
+						</div>
 
-					<div className='form-group'>
-						<input name='startingBalance' type='hidden' id='startingBalance' />
-					</div>
+						<div className='form-group'>
+							<input name='expectedReturn' type='hidden' id='expectedReturn' />
+						</div>
 
-					<div className='form-group'>
-						<input name='expectedReturn' type='hidden' id='expectedReturn' />
-					</div>
-
-					<input type='submit' value='Send mail'className='send_Mail' />
-				</form>
+						<Button variant='contained' endIcon={<SendIcon />} type='submit'>
+							Send Mail
+						</Button>
+					</form>
 				</div>
 			</section>
 		</div>

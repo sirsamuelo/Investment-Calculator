@@ -41,10 +41,19 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.questionaire_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.questionaire_container #back {
+  position: absolute; 
+  left: -150px;
+}
 
 .sliders {
   width: 100%;
-  height: 20vh;
   background-color: transparent;
 }
 .sliders h1 {
@@ -106,7 +115,7 @@ body {
   height: 100vh;
   width: 90%;
   text-align: center;
-  margin: 5rem 0;
+  margin: 1rem 0 6rem 0;
 }
 .graph__container h2 {
   color: var(--dark-2-blue);
@@ -205,6 +214,14 @@ body {
 
 
 @media screen and (max-width: 820px) {
+  .questionaire_container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .questionaire_container #back {
+    position: relative;
+  }
   .sliders form {
     grid-template-columns: 300px; 
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
@@ -226,12 +243,12 @@ body {
     font-size: 1rem;
     width: 100%;
   }
-  .graph__container {
-    margin-top: 400px;
-  }
 }
 
 @media screen and (max-width: 550px) {
+  .questionaire_container {
+    flex-direction: row;
+  }
   .questions__container {
     width: 400px;
   }
@@ -256,38 +273,6 @@ body {
 .Area-5 { grid-area: Area-5; }
 
 
-/* .wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgba(4, 85, 123, 0.45);
-  background-size: cover;
-  background-position: center center;
-  background-blend-mode: darken;
-  transition: transform 0.2s;
-}
-.section1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section1 .img_container {
-  height: 700px;
-  width: 700px;
-}
-
-.GRADUATE {
-  max-width: 100%;
-  height: auto;
-} */
 
 .section1 .box {
   height: 150px;
@@ -380,28 +365,31 @@ body {
 }
 .skw-page__heading {
   margin-bottom: 15px;
-  text-transform: uppercase;
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
 }
 .skw-page__description {
-  font-size: 25px;
+  font-size: 14px;
   font-weight: 300;
-  text-transform: uppercase;
   text-align: center;
+}
+.h2_heading{
+  margin: 15px;
 }
 .skw-page__link {
   color: #FFA0A0;
 }
 .skw-page-1 .skw-page__half--left .skw-page__content {
-  background-image: url("https://images.pexels.com/photos/4842659/pexels-photo-4842659.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-image: url("https://static.vecteezy.com/system/resources/previews/002/241/375/large_2x/the-happy-guy-graduated-from-an-educational-institution-vector.jpg");
   background-position: center;
 }
 .skw-page-1 .skw-page__half--right .skw-page__content {
-  background: var(--light-blue);
+  background: rgb(97,172,224);
+background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-2 .skw-page__half--left .skw-page__content {
-  background: var(--light-blue);
+  background: rgb(97,172,224);
+background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-2 .skw-page__half--right .skw-page__content {
   background-image: url("./figma/2.jpg");
@@ -410,28 +398,34 @@ body {
 }
 
 .skw-page-3 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg");
+  background-image: url("https://www.investsmall.co/wp-content/uploads/2020/11/fin-investment-1024x683.jpg");
+  background-position: center center;
+  opacity: 0.7;
 }
 .skw-page-3 .skw-page__half--right .skw-page__content {
-  background: var(--light-blue);
+  background: rgb(97,172,224);
+background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-4 .skw-page__half--left .skw-page__content {
-  background: var(--light-blue);
+  background: rgb(97,172,224);
+background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg");
+  background-image: url("https://journal.firsttuesday.us/wp-content/uploads/Investing-Stocks-or-Real-Estate.png");
 }
 .skw-page-5 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
+  background-image: url("https://image.freepik.com/free-photo/happy-financial-agent-smiling_256588-509.jpg");
 }
 .skw-page-5 .skw-page__half--right .skw-page__content {
-  background: var(--light-blue);
+  background: rgb(97,172,224);
+  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-6 .skw-page__half--left .skw-page__content {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
 }
 .skw-page-6 .skw-page__half--right .skw-page__content {
-  background: var(--light-blue);
+  background: rgb(97,172,224);
+  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 
 .overlay {
@@ -444,213 +438,18 @@ body {
   z-index: 100;
 }
 
-
-/* Nanuk */
-.button--nanuk {
-	padding: 0 2em;
-	overflow: hidden;
-	background: #7986cb;
-	-webkit-transition: background-color 0.3s;
-	transition: background-color 0.3s;
-}
-.button--nanuk.button--inverted {
-	background: #fff;
-	color: #7986cb;
-}
-.button--nanuk > span {
-	display: inline-block;
-	padding: 1em 0;
-}
-.button--nanuk:hover {
-	background-color: #3f51b5;
-}
-.button--nanuk:hover > span:nth-child(odd) {
-	-webkit-animation: anim-nanuk-1 0.5s forwards;
-	animation: anim-nanuk-1 0.5s forwards;
-}
-.button--nanuk:hover > span:nth-child(even) {
-	-webkit-animation: anim-nanuk-2 0.5s forwards;
-	animation: anim-nanuk-2 0.5s forwards;
-}
-.button--nanuk:hover > span:nth-child(odd),
-.button--nanuk:hover > span:nth-child(even) {
-	animation-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-	transition-animation-function: cubic-bezier(0.75, 0, 0.125, 1);
-}
-
-
-@-webkit-keyframes anim-nanuk-1 {
-	0%,
-	100% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	}
-	49% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
-	}
-	50% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
-		color: inherit;
-	}
-	51% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
-		color: #fff;
-	}
-	100% {
-		color: #fff;
-	}
-}
-
-@keyframes anim-nanuk-1 {
-	0%,
-	100% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	}
-	49% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
-	}
-	50% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
-		color: inherit;
-	}
-	51% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
-		color: #fff;
-	}
-	100% {
-		color: #fff;
-	}
-}
-
-
-@-webkit-keyframes anim-nanuk-2 {
-	0%,
-	100% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	}
-	49% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
-	}
-	50% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
-		color: inherit;
-	}
-	51% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
-		color: #fff;
-	}
-	100% {
-		color: #fff;
-	}
-}
-@keyframes anim-nanuk-2 {
-	0%,
-	100% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	}
-	49% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
-	}
-	50% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
-		color: inherit;
-	}
-	51% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
-		color: #fff;
-	}
-	100% {
-		color: #fff;
-	}
-}
-.button--nanuk:hover > span:nth-child(1) {
-	-webkit-animation-delay: 0s;
-	animation-delay: 0s;
-}
-.button--nanuk:hover > span:nth-child(2) {
-	-webkit-animation-delay: 0.05s;
-	animation-delay: 0.05s;
-}
-.button--nanuk:hover > span:nth-child(3) {
-	-webkit-animation-delay: 0.1s;
-	animation-delay: 0.1s;
-}
-.button--nanuk:hover > span:nth-child(4) {
-	-webkit-animation-delay: 0.15s;
-	animation-delay: 0.15s;
-}
-.button--nanuk:hover > span:nth-child(5) {
-	-webkit-animation-delay: 0.2s;
-	animation-delay: 0.2s;
-}
-.button--nanuk:hover > span:nth-child(6) {
-	-webkit-animation-delay: 0.25s;
-	animation-delay: 0.25s;
-}
-.button--nanuk:hover > span:nth-child(7) {
-	-webkit-animation-delay: 0.3s;
-	animation-delay: 0.3s;
-}
-.button--nanuk:hover > span:nth-child(8) {
-	-webkit-animation-delay: 0.35s;
-	animation-delay: 0.35s;
-}
-.button--nanuk:hover > span:nth-child(9) {
-	-webkit-animation-delay: 0.4s;
-	animation-delay: 0.4s;
-}
-.button--nanuk:hover > span:nth-child(10) {
-	-webkit-animation-delay: 0.45s;
-	animation-delay: 0.45s;
-}
-.button--nanuk:hover > span:nth-child(11) {
-	-webkit-animation-delay: 0.5s;
-	animation-delay: 0.5s;
-}
-
 .footer {
-  margin-top: 100px;
   height: 15vh; 
   width: 100%;
   background-color: var(--dark-2-blue);
+  padding: 2rem;
 }
+
 .footer_container {
   width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 }
 #tlak  {
   display: flex;
@@ -667,17 +466,16 @@ body {
 #tlak .form-group:first-child label {
   color:#FFF;
 }
-
 #tlak .form-group {
   display: none;
 }
-
-.send_Mail {
-  border-radius: 4px;
-  border: none;
-  height: 30px;
-  padding: 0 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
+.footer_container .email {
+  color: #FFF;
+}
+.footer_container .email {
+  border: 2px solid white;
+}
+.sendMailInput {
+  color: #FFF;
+  font-size: 20px;
 }
