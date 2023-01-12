@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
 
-const Questionaire = ({ onData }) => {
+const Questionaire = ({onData}) => {
 	const [isChecked, setIsChecked] = useState([]);
 	const [count, setCount] = useState(0);
 

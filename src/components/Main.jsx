@@ -26,10 +26,10 @@ import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 
 const Main = () => {
-	const [startingBalance, setStartingBalance] = useState(null);
-	const [expectedReturn, setExpectedReturn] = useState(null);
-	const [monthlyDeposit, setMonthlyDeposit] = useState(null);
-	const [duration, setDuration] = useState(null);
+	const [startingBalance, setStartingBalance] = useState(0);
+	const [expectedReturn, setExpectedReturn] = useState(0);
+	const [monthlyDeposit, setMonthlyDeposit] = useState(0);
+	const [duration, setDuration] = useState(0);
 	const [finalAmount, setFinalAmount] = useState(0);
 	const [myData, setMyData] = useState([]);
 	const [data, setData] = useState(0);
@@ -45,7 +45,6 @@ const Main = () => {
 		document.getElementById('monthlyDeposit').value = monthlyDeposit;
 		document.getElementById('startingBalance').value = startingBalance;
 		document.getElementById('expectedReturn').value = expectedReturn;
-		console.log(myRef.current);
 		emailjs
 			.sendForm(
 				'service_dfxpa4s',
@@ -61,7 +60,7 @@ const Main = () => {
 					console.log(error.text);
 				}
 			);
-		// setEmail('');
+		setEmail('');
 	};
 
 	const handleData = (newData) => {
@@ -179,19 +178,6 @@ const Main = () => {
 		myRef.current = element;
 	};
 	setMyRef(forming);
-	// useEffect(() => {
-	// 	const setMyRef = (element) => {
-	// 		myRef.current = element
-	// 	}
-	// 	setMyRef(forming)
-	// },[])
-
-	const styles = (theme) => ({
-		notchedOutline: {
-			borderWidth: '1px',
-			borderColor: 'yellow !important',
-		},
-	});
 	return (
 		<div className='container'>
 			<div className="questionaire_container">
@@ -200,9 +186,6 @@ const Main = () => {
 					style={{
 						textDecoration: 'none',
 						margin: '1rem',
-						// position: 'absolute',
-						// left: '20%',
-						// top: '10px',
 					}}
 					id='back'
 				>
