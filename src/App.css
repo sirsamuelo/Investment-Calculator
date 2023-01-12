@@ -3,10 +3,15 @@
 
 :root {
   --light-blue: #bce4fa;
-  --erste-red: #e30613;
+  --erste-red: #1A936F;
   --dark-blue: #0065ad;
   --dark-2-blue: #00497b;
   --light-blue-2: #B0D3E4;
+  --dark-lava: #423629;
+  --violet: #483a58;
+  --charcoal: #2e4057;
+  --lazuli: #38618c;
+  --prusian-blue:#032b43;
   --openSans: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
@@ -23,21 +28,18 @@
   border-radius: 7px;
 }
 body {
-  background-size: 100% 100%;
-background-position: 0px 0px;
-background-image: radial-gradient(75% 75% at 50% 50%, #bce4fa 0%, #00437BFF 100%);
+  background-color: var(--light-blue-2);
+  margin: 0;
   font-family: 'Roboto', sans-serif;
-  /* margin: 0;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden; */
 }
 .container {
   /* toto potom odjebat prec */
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .sliders {
@@ -46,7 +48,7 @@ background-image: radial-gradient(75% 75% at 50% 50%, #bce4fa 0%, #00437BFF 100%
   background-color: transparent;
 }
 .sliders h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   color: var(--dark-blue);
 }
@@ -101,11 +103,10 @@ background-image: radial-gradient(75% 75% at 50% 50%, #bce4fa 0%, #00437BFF 100%
 
 .graph__container {
   display: none;
-  /* background-color:  var(--dark-2-blue); */
-  height: 70vh;
-  width: 100%;
+  height: 100vh;
+  width: 90%;
   text-align: center;
-  margin-top: 6rem;
+  margin: 5rem 0;
 }
 .graph__container h2 {
   color: var(--dark-2-blue);
@@ -638,14 +639,45 @@ background-image: radial-gradient(75% 75% at 50% 50%, #bce4fa 0%, #00437BFF 100%
 	animation-delay: 0.5s;
 }
 
-
-#tlak {
+.footer {
   margin-top: 100px;
+  height: 15vh; 
+  width: 100%;
+  background-color: var(--dark-2-blue);
+}
+.footer_container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+#tlak  {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
 }
 #tlak .form-group:first-child {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+#tlak .form-group:first-child label {
+  color:#FFF;
 }
 
 #tlak .form-group {
   display: none;
+}
+
+.send_Mail {
+  border-radius: 4px;
+  border: none;
+  height: 30px;
+  padding: 0 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
 }
