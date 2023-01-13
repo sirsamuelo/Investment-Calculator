@@ -213,67 +213,11 @@ body {
   cursor: pointer;
 }
 
-
-@media screen and (max-width: 820px) {
-  .questionaire_container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .questionaire_container #back {
-    position: relative;
-  }
-  .sliders form {
-    grid-template-columns: 300px; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "Area-1"
-      "Area-2"
-      "Area-3"
-      "Area-4"
-      "Area-5"; 
-  }
-  #submit {
-    position: relative;
-    width: 100%;
-  }
-  
-  .form-group input {
-    padding : 0.7rem 1rem;
-    font-size: 1rem;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .questionaire_container {
-    flex-direction: row;
-  }
-  .questions__container {
-    width: 400px;
-  }
-  .questions__container .questionHeading {
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .questions__container {
-    width: 300px;
-  }
-  .questions__container .questionHeading {
-    font-size: 1rem;
-  }
-}
-
 .Area-1 { grid-area: Area-1; }
 .Area-2 { grid-area: Area-2; }
 .Area-3 { grid-area: Area-3; }
 .Area-4 { grid-area: Area-4; }
 .Area-5 { grid-area: Area-5; }
-
-
 
 .section1 .box {
   height: 150px;
@@ -420,8 +364,6 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 .skw-page-4 .skw-page__half--right .skw-page__content {
   background-image: url("https://d3v5ezchayoty7.cloudfront.net/wp-content/uploads/shutterstock_538414771-1.jpg");
 }
-
-
 .overlay {
   position: absolute;
   top: 0;
@@ -499,5 +441,67 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 .qr .card_container .card #qr {
   height: auto;
   width: 300px;
+}
+
+
+@media screen and (max-width: 820px) {
+  .questionaire_container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .questionaire_container #back {
+    position: relative;
+  }
+  .sliders form {
+    grid-template-columns: 300px; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Area-1"
+      "Area-2"
+      "Area-3"
+      "Area-4"
+      "Area-5"; 
+  }
+  #submit {
+    position: relative;
+    width: 100%;
+  }
+  
+  .form-group input {
+    padding : 0.7rem 1rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .qr .card_container  {
+    flex-direction: column;
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .questionaire_container {
+    flex-direction: row;
+  }
+  .questions__container {
+    width: 400px;
+  }
+  .questions__container .questionHeading {
+    font-size: 1.1rem;
+  }
+  .qr .card_container  {
+    flex-direction: column;
+    min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .questions__container {
+    width: 300px;
+  }
+  .questions__container .questionHeading {
+    font-size: 1rem;
+  }
 }
 
