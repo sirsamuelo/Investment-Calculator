@@ -350,14 +350,17 @@ body {
   transition: transform 1s, opacity 1s;
   background-size: cover;
 }
+.skw-page__content h3 {
+  text-transform: uppercase;
+}
 .skw-page__half--left .skw-page__content {
   padding-left: 30%;
   padding-right: 30%;
   transform-origin: 100% 0;
 }
 .skw-page__half--right .skw-page__content {
-  padding-left: 30%;
-  padding-right: 30%;
+  /* padding-left: 30%; */
+  /* padding-right: 30%; */
   transform-origin: 0 100%;
 }
 .skw-page.inactive .skw-page__content {
@@ -393,41 +396,31 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-2 .skw-page__half--right .skw-page__content {
-  background-image: url("./figma/2.jpg");
-  background-position: center center;
-  background-blend-mode: darken;
-}
-
-.skw-page-3 .skw-page__half--left .skw-page__content {
   background-image: url("https://www.investsmall.co/wp-content/uploads/2020/11/fin-investment-1024x683.jpg");
   background-position: center center;
   opacity: 0.7;
 }
+
+.skw-page-3 .skw-page__half--left .skw-page__content {
+  background-image: url("https://journal.firsttuesday.us/wp-content/uploads/Investing-Stocks-or-Real-Estate.png");
+  background-position: center left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* transform: scale(0.5); */
+  opacity: 0.7;
+}
 .skw-page-3 .skw-page__half--right .skw-page__content {
   background: rgb(97,172,224);
-background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
+  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-4 .skw-page__half--left .skw-page__content {
   background: rgb(97,172,224);
 background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
-  background-image: url("https://journal.firsttuesday.us/wp-content/uploads/Investing-Stocks-or-Real-Estate.png");
+  background-image: url("https://d3v5ezchayoty7.cloudfront.net/wp-content/uploads/shutterstock_538414771-1.jpg");
 }
-.skw-page-5 .skw-page__half--left .skw-page__content {
-  background-image: url("https://image.freepik.com/free-photo/happy-financial-agent-smiling_256588-509.jpg");
-}
-.skw-page-5 .skw-page__half--right .skw-page__content {
-  background: rgb(97,172,224);
-  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
-}
-.skw-page-6 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
-}
-.skw-page-6 .skw-page__half--right .skw-page__content {
-  background: rgb(97,172,224);
-  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
-}
+
 
 .overlay {
   position: absolute;
@@ -435,7 +428,7 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.6);
   z-index: 100;
 }
 
