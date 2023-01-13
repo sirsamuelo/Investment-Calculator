@@ -1,29 +1,20 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import MyResponsiveLine from './MyResponsiveLine';
+import emailjs from '@emailjs/browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import {
+	faChartSimple,
+} from '@fortawesome/free-solid-svg-icons';
 import Input from '@mui/joy/Input';
-
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
-import { spacing } from '@mui/system';
-import InputLabel from '@mui/material/InputLabel';
-import EmailIcon from '@mui/icons-material/Email';
-import { CssTextField } from './CssTextField';
-import {
-	faEuroSign,
-	faPercent,
-	faCalendarDays,
-	faClock,
-	faChartSimple,
-	faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
-import InputAdornment from '@mui/material/InputAdornment';
 import Questionaire from './Questionaire';
-import emailjs from '@emailjs/browser';
-import { Link } from 'react-router-dom';
+import MyResponsiveLine from './MyResponsiveLine';
+import Ar from './Ar'
+
+
 
 const Main = () => {
 	const [startingBalance, setStartingBalance] = useState(0);
@@ -35,8 +26,7 @@ const Main = () => {
 	const [data, setData] = useState(0);
 	const [email, setEmail] = useState('');
 	const myRef = useRef(null);
-	const form = new FormData();
-	const forming = document.getElementById('tlak');
+	const forming = document.getElementById('email_form');
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -260,9 +250,12 @@ const Main = () => {
 				</h4>
 				<MyResponsiveLine data={myData} />
 			</div>
+			<section className="qr">
+				{finalAmount !== 0 ? <Ar startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
+			</section>
 			<section className='footer'>
 				<div className='footer_container'>
-					<form ref={myRef} onSubmit={sendEmail} id='tlak'>
+					<form ref={myRef} onSubmit={sendEmail} id='email_form'>
 						<div>
 							<Input
 								color='neutral'
