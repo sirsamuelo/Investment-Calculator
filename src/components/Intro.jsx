@@ -1,16 +1,8 @@
-// import Graduate from '../figma/Graduate.png';
-// import Boy from '../figma/Boy.png';
-// import Clock from '../figma/Clock.png';
-// import Couch from '../figma/Couch.png';
-// import Pc from '../figma/Pc.png';
-// import Rug from '../figma/Rug.png';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Typography from '@mui/material/Typography';
-// import Table from '../figma/Table.png';
-import qrhouse from '../figma/qrhouse.png';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
@@ -79,10 +71,18 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<Typography variant='h3' gutterBottom style={{ textAlign: 'center'}}>
+							<Typography
+								variant='h3'
+								gutterBottom
+								style={{ textAlign: 'center' }}
+							>
 								Hello, my name is Jacob and I just graduated.
 							</Typography>
-							<Typography variant='h5' gutterBottom style={{ textAlign: 'center'}}>
+							<Typography
+								variant='h5'
+								gutterBottom
+								style={{ textAlign: 'center' }}
+							>
 								I found nice job wtih good income, I do not know what to do with
 								my money! I don´t have any financial education, but one thing I
 								know I want to invest them!
@@ -101,12 +101,27 @@ const Intro = () => {
 							>
 								Why should I invest ?
 							</Typography>
-							<Typography variant='h5' gutterBottom style={{ textAlign: 'center'}}>
+							<Typography
+								variant='h5'
+								gutterBottom
+								style={{ textAlign: 'center' }}
+							>
 								Investing is a way to grow your money over time by putting it
 								into assets that have the potential to increase in value. This
 								can include stocks, bonds, real estate, and more. Investing can
 								help you reach your financial goals, such as saving for
 								retirement or buying a house.
+							</Typography>
+							<Typography
+								variant='caption'
+								gutterBottom
+								style={{ margin: '2rem' }}
+							>
+								It is important to remember that investing carries risk and past
+								performance is not indicative of future results. It is
+								recommended that you consult with a financial advisor before
+								making any investment decisions. Do not use this web application
+								as financial recommendation.
 							</Typography>
 						</div>
 					</div>
@@ -127,7 +142,7 @@ const Intro = () => {
 				</div>
 				<div className='skw-page__half skw-page__half--right'>
 					<div className='skw-page__skewed'>
-						<div className='skw-page__content' style={{ textAlign: 'center'}}>
+						<div className='skw-page__content' style={{ textAlign: 'center' }}>
 							<Typography
 								variant='h4'
 								gutterBottom
@@ -168,7 +183,10 @@ const Intro = () => {
 				<div className='skw-page__half skw-page__half--left'>
 					<div className='skw-page__skewed'>
 						<div className='skw-page__content'>
-							<Typography variant='h3' style={{ textTransform: 'uppercase',textAlign: 'center' }}>
+							<Typography
+								variant='h3'
+								style={{ textTransform: 'uppercase', textAlign: 'center' }}
+							>
 								Show yourself capable in world of finance !
 							</Typography>
 							<Link

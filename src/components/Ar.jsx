@@ -1,11 +1,5 @@
 import React, { Fragment } from 'react';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Container from '@mui/material/Container';
 import QR from '../figma/qrhouse.png';
 import Hiro from '../figma/Hiro.png';
 import Divider from '@mui/material/Divider';
