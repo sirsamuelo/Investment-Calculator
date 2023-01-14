@@ -13,6 +13,8 @@ import TextField from '@mui/material/TextField';
 import Questionaire from './Questionaire';
 import MyResponsiveLine from './MyResponsiveLine';
 import Ar from './Ar'
+import ImageSlider from './ImageSlider';
+import {SliderData} from './SliderData.js';
 
 
 
@@ -253,6 +255,8 @@ const Main = () => {
 			<section className="qr">
 				{finalAmount !== 0 ? <Ar data={data} startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
 			</section>
+			{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
+			{/* =====================================FOOTER=========================================== */}
 			<section className='footer'>
 				<div className='footer_container'>
 					<form ref={myRef} onSubmit={sendEmail} id='email_form'>
@@ -302,6 +306,7 @@ const Main = () => {
 					</form>
 				</div>
 			</section>
+
 		</div>
 	);
 };
