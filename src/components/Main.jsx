@@ -10,9 +10,7 @@ import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
 import Questionaire from './Questionaire';
 import MyResponsiveLine from './MyResponsiveLine';
-import Ar from './Ar';
 import ImageSlider from './ImageSlider';
-import { SliderData } from './SliderData.js';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
@@ -270,19 +268,7 @@ const Main = () => {
 						</Typography>
 					</div>
 				) : null}
-				{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
-				{finalAmount !== 0 ? (
-					<Ar
-						data={data}
-						startingBalance={startingBalance}
-						expectedReturn={expectedReturn}
-						monthlyDeposit={monthlyDeposit}
-						duration={duration}
-						finalAmount={finalAmount}
-					/>
-				) : (
-					''
-				)}
+				{finalAmount !== 0 ? <ImageSlider finalAmount={finalAmount}/> : null}
 			</section>
 			{/* =====================================FOOTER=========================================== */}
 			<section className='footer'>
