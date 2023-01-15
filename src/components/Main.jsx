@@ -15,6 +15,9 @@ import MyResponsiveLine from './MyResponsiveLine';
 import Ar from './Ar'
 import ImageSlider from './ImageSlider';
 import {SliderData} from './SliderData.js';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
 
 
 
@@ -252,10 +255,18 @@ const Main = () => {
 				</h4>
 				<MyResponsiveLine data={myData} />
 			</div>
-			<section>
-			{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
-			</section>
 			<section className="qr">
+				{finalAmount !== 0 ? <div>
+					<Divider sx={{ width: '80%', margin: '0 auto'}}>
+					<Chip label="Augmented Reality" color="primary"></Chip>
+				</Divider>
+				<Typography variant='h6' gutterBottom sx={{margin: '2rem auto',width: '40%',textAlign: 'center'}}>
+					Hello my friend, I see you would like to invest <span>{startingBalance}€</span> at the
+					beggining of your journey. That`s awsome. Imagine, after <span>{duration}</span> years
+					and with your monthly deposit <span>{monthlyDeposit}€</span> and expected return <span>{data !== 0 ? data : expectedReturn}%</span> you can buy lots of things. Lets see what you can buy with your return <span>{finalAmount}€.</span>
+				</Typography>
+				</div>: null}
+				{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
 				{finalAmount !== 0 ? <Ar data={data} startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
 			</section>
 			{/* =====================================FOOTER=========================================== */}

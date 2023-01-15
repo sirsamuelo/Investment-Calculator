@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
