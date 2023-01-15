@@ -7,19 +7,19 @@ import money from '../figma/QR/qrmoney-png.png';
 
 export const SliderData = [
 	{
+		image: watch,
+	},
+	{
+		image: field,
+	},
+	{
 		image: boat,
 	},
 	{
 		image: car,
 	},
 	{
-		image: field,
-	},
-	{
 		image: house,
-	},
-	{
-		image: watch,
 	},
 	{
 		image: money,

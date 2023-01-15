@@ -1,11 +1,8 @@
 import React, { Fragment } from 'react';
-import Hiro from '../figma/Sign.png';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
+import Hiro from '../figma/Hiro.png';
 
 
-export default function Ar({data,finalAmount,duration,monthlyDeposit,expectedReturn,startingBalance}) {
+export default function Ar() {
 	return (
 		<Fragment>
 			<div className='card_container'>

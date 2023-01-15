@@ -385,6 +385,21 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
   background-image: url("https://d3v5ezchayoty7.cloudfront.net/wp-content/uploads/shutterstock_538414771-1.jpg");
+  background-image: url("https://journal.firsttuesday.us/wp-content/uploads/Investing-Stocks-or-Real-Estate.png");
+}
+.skw-page-5 .skw-page__half--left .skw-page__content {
+  background-image: url("https://d3v5ezchayoty7.cloudfront.net/wp-content/uploads/shutterstock_538414771-1.jpg");
+}
+.skw-page-5 .skw-page__half--right .skw-page__content {
+  background: rgb(97,172,224);
+  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
+}
+.skw-page-6 .skw-page__half--left .skw-page__content {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
+}
+.skw-page-6 .skw-page__half--right .skw-page__content {
+  background: rgb(97,172,224);
+  background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 100%);
 }
 .overlay {
   position: absolute;
