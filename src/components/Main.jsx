@@ -252,10 +252,12 @@ const Main = () => {
 				</h4>
 				<MyResponsiveLine data={myData} />
 			</div>
+			<section>
+			{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
+			</section>
 			<section className="qr">
 				{finalAmount !== 0 ? <Ar data={data} startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
 			</section>
-			{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
 			{/* =====================================FOOTER=========================================== */}
 			<section className='footer'>
 				<div className='footer_container'>

@@ -18,15 +18,6 @@ export default function Ar({data,finalAmount,duration,monthlyDeposit,expectedRet
 			</Typography>
 			<div className='card_container'>
 				<div className='card'>
-					<img
-						src={QR}
-						alt={'QR'}
-						loading='lazy'
-						id='qr'
-						style={{ margin: '1rem' }}
-					/>
-				</div>
-				<div className='card'>
 					<img src={Hiro} alt={'Hero'} loading='lazy' />
 				</div>
 			</div>

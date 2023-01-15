@@ -443,10 +443,10 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 }
 .qr .card_container {
   margin: 2rem auto;
-  width: 70%;
+  width: 20%;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color:  rgb(242,243,244);
   padding: 1rem;
@@ -531,7 +531,8 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 
 .slider {
   position: relative;
-  height: 50vh;
+  height: 40vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
