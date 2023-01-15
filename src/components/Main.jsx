@@ -3,23 +3,19 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import emailjs from '@emailjs/browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faChartSimple,
-} from '@fortawesome/free-solid-svg-icons';
+import { faChartSimple } from '@fortawesome/free-solid-svg-icons';
 import Input from '@mui/joy/Input';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
 import Questionaire from './Questionaire';
 import MyResponsiveLine from './MyResponsiveLine';
-import Ar from './Ar'
+import Ar from './Ar';
 import ImageSlider from './ImageSlider';
-import {SliderData} from './SliderData.js';
+import { SliderData } from './SliderData.js';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
-
-
 
 const Main = () => {
 	const [startingBalance, setStartingBalance] = useState(0);
@@ -141,8 +137,6 @@ const Main = () => {
 		var testing = [{ id: 'With investing ', color: 'hsl(50, 30%, 50%)' }];
 		testing[0].data = desiredData;
 
-	
-
 		//Without expected return
 		testing.push({ id: 'Without investing', color: 'hsl(50, 30%, 50%)' });
 		balances = [];
@@ -175,7 +169,7 @@ const Main = () => {
 	setMyRef(forming);
 	return (
 		<div className='container'>
-			<div className="questionaire_container">
+			<div className='questionaire_container'>
 				<Link
 					to='/'
 					style={{
@@ -255,19 +249,40 @@ const Main = () => {
 				</h4>
 				<MyResponsiveLine data={myData} />
 			</div>
-			<section className="qr">
-				{finalAmount !== 0 ? <div>
-					<Divider sx={{ width: '80%', margin: '0 auto'}}>
-					<Chip label="Augmented Reality" color="primary"></Chip>
-				</Divider>
-				<Typography variant='h6' gutterBottom sx={{margin: '2rem auto',width: '40%',textAlign: 'center'}}>
-					Hello my friend, I see you would like to invest <span>{startingBalance}€</span> at the
-					beggining of your journey. That`s awsome. Imagine, after <span>{duration}</span> years
-					and with your monthly deposit <span>{monthlyDeposit}€</span> and expected return <span>{data !== 0 ? data : expectedReturn}%</span> you can buy lots of things. Lets see what you can buy with your return <span>{finalAmount}€.</span>
-				</Typography>
-				</div>: null}
+			<section className='qr'>
+				{finalAmount !== 0 ? (
+					<div>
+						<Divider sx={{ width: '80%', margin: '0 auto' }}>
+							<Chip label='Augmented Reality' color='primary'></Chip>
+						</Divider>
+						<Typography
+							variant='h6'
+							gutterBottom
+							sx={{ margin: '2rem auto', width: '40%', textAlign: 'center' }}
+						>
+							Hello my friend, I see you would like to invest{' '}
+							<span>{startingBalance}€</span> at the beggining of your journey.
+							That`s awsome. Imagine, after <span>{duration}</span> years and
+							with your monthly deposit <span>{monthlyDeposit}€</span> and
+							expected return <span>{data !== 0 ? data : expectedReturn}%</span>{' '}
+							you can buy lots of things. Lets see what you can buy with your
+							return <span>{finalAmount}€.</span>
+						</Typography>
+					</div>
+				) : null}
 				{finalAmount !== 0 ? <ImageSlider slides={SliderData} /> : null}
-				{finalAmount !== 0 ? <Ar data={data} startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
+				{finalAmount !== 0 ? (
+					<Ar
+						data={data}
+						startingBalance={startingBalance}
+						expectedReturn={expectedReturn}
+						monthlyDeposit={monthlyDeposit}
+						duration={duration}
+						finalAmount={finalAmount}
+					/>
+				) : (
+					''
+				)}
 			</section>
 			{/* =====================================FOOTER=========================================== */}
 			<section className='footer'>
@@ -284,8 +299,8 @@ const Main = () => {
 								name='user_email'
 								onChange={(e) => setEmail(e.target.value)}
 								value={email}
-								style={{color: 'white',border: '1px solid white'}}
-								className="sendMailInput"
+								style={{ color: 'white', border: '1px solid white' }}
+								className='sendMailInput'
 							/>
 						</div>
 
@@ -319,7 +334,6 @@ const Main = () => {
 					</form>
 				</div>
 			</section>
-
 		</div>
 	);
 };
