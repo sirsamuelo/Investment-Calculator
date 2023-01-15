@@ -6,7 +6,7 @@ function Boat() {
     <div className="App">
     <div>
     <a-scene>
-          <a-marker preset="hiro">
+          <a-marker type='pattern' patternUrl='./pattern.patt'>
           <a-entity
             rotation="90 180 0"
             position="0 -10 0" 

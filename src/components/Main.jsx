@@ -251,7 +251,7 @@ const Main = () => {
 				<MyResponsiveLine data={myData} />
 			</div>
 			<section className="qr">
-				{finalAmount !== 0 ? <Ar startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
+				{finalAmount !== 0 ? <Ar data={data} startingBalance={startingBalance} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} duration={duration} finalAmount={finalAmount}/> : ''}
 			</section>
 			<section className='footer'>
 				<div className='footer_container'>
