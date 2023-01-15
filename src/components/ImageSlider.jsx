@@ -60,16 +60,24 @@ const ImageSlider = ({ finalAmount}) => {
   },[finalAmount])
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+    if(current === 5) {
+      setCurrent(0)
+    } else {
+      setCurrent(current === length - 1 ? 0 : current + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+    if(current === 0){
+      setCurrent(5)
+    } else {
+      setCurrent(current === 0 ? length - 1 : current - 1);
+    }
   };
 
-  // if (!Array.isArray(baseArr) || baseArr.length <= 0) {
-  //   return null;
-  // }
+  if (!Array.isArray(qr) || baseArr.length <= 0) {
+    return null;
+  }
 
   return (
     <section className='slider'>
