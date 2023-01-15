@@ -1,0 +1,53 @@
+Index: src/components/Ar.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Fragment } from 'react';\r\nimport Typography from '@mui/material/Typography';\r\nimport Box from '@mui/material/Box';\r\nimport Card from '@mui/material/Card';\r\nimport Container from '@mui/material/Container';\r\nimport QR from '../figma/qrcar.png';\r\nimport Hiro from '../figma/Hiro.png';\r\nimport Divider from '@mui/material/Divider';\r\nimport Chip from '@mui/material/Chip';\r\n\r\nexport default function Ar({data,finalAmount,duration,monthlyDeposit,expectedReturn,startingBalance}) {\r\n\treturn (\r\n\t\t<Fragment>\r\n\t\t\t<Divider sx={{ width: '80%', margin: '0 auto'}}>\r\n\t\t\t\t<Chip label=\"Augmented Reality\" color=\"primary\"></Chip>\r\n\t\t\t</Divider>\r\n\t\t\t<Typography variant='h6' gutterBottom sx={{margin: '2rem auto',width: '40%',textAlign: 'center'}}>\r\n\t\t\t\tHello my friend, I see you would like to invest <span>{startingBalance}€</span> at the\r\n\t\t\t\tbeggining of your journey. That`s awsome. Imagine, after <span>{duration}</span> years\r\n\t\t\t\tand with your monthly deposit <span>{monthlyDeposit}€</span> and expected return <span>{data !== 0 ? data : expectedReturn}%</span> you can buy lots of things. Lets see what you can buy with your return <span>{finalAmount}€.</span>\r\n\t\t\t</Typography>\r\n\t\t\t<div className='card_container'>\r\n\t\t\t\t<div className='card'>\r\n\t\t\t\t\t<img src={Hiro} alt={'Hero'} loading='lazy' />\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</Fragment>\r\n\t);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Ar.jsx b/src/components/Ar.jsx
+--- a/src/components/Ar.jsx	(revision 88dbb22c4ae28ef5512442cce49dbfa22a7e4ca0)
++++ b/src/components/Ar.jsx	(date 1673808557985)
+@@ -1,9 +1,6 @@
+ import React, { Fragment } from 'react';
+ import Typography from '@mui/material/Typography';
+-import Box from '@mui/material/Box';
+-import Card from '@mui/material/Card';
+-import Container from '@mui/material/Container';
+-import QR from '../figma/qrcar.png';
++import QR from '../figma/QRauto.png';
+ import Hiro from '../figma/Hiro.png';
+ import Divider from '@mui/material/Divider';
+ import Chip from '@mui/material/Chip';
+@@ -20,6 +17,15 @@
+ 				and with your monthly deposit <span>{monthlyDeposit}€</span> and expected return <span>{data !== 0 ? data : expectedReturn}%</span> you can buy lots of things. Lets see what you can buy with your return <span>{finalAmount}€.</span>
+ 			</Typography>
+ 			<div className='card_container'>
++				<div className='card'>
++					<img
++						// src={QR}
++						alt={'QR'}
++						loading='lazy'
++						id='qr'
++						style={{ margin: '1rem' }}
++					/>
++				</div>
+ 				<div className='card'>
+ 					<img src={Hiro} alt={'Hero'} loading='lazy' />
+ 				</div>
+Index: src/components/SliderData.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import QR from '../figma/qrhouse.png';\r\n\r\nexport const SliderData = [\r\n\t{\r\n\t\timage: QR,\r\n\t},\r\n\t{\r\n\t\timage: QR,\r\n\t},\r\n\t{\r\n\t\timage:\r\n\t\t\t'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',\r\n\t},\r\n];\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SliderData.js b/src/components/SliderData.js
+--- a/src/components/SliderData.js	(revision 88dbb22c4ae28ef5512442cce49dbfa22a7e4ca0)
++++ b/src/components/SliderData.js	(date 1673808528683)
+@@ -1,4 +1,4 @@
+-import QR from '../figma/qrhouse.png';
++import QR from '../figma/Hiro.png';
+ 
+ export const SliderData = [
+ 	{
