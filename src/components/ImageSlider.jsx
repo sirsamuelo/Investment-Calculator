@@ -1,11 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-import boat from '../figma/QR/boat.png';
-import car from '../figma/QR/car.png';
-import field from '../figma/QR/field.png';
-import house from '../figma/QR/house.png';
-import watch from '../figma/QR/watch.png';
-import money from '../figma/QR/money.png';
+import car from '../img/QR/car.png';
+import field from '../img/QR/field.png';
+import house from '../img/QR/house.png';
+import watch from '../img/QR/watch.png';
+import money from '../img/QR/money.png';
+import boat from '../img/QR/boat.png'
+
 
 const ImageSlider = ({ finalAmount}) => {
   const [current, setCurrent] = useState(0);

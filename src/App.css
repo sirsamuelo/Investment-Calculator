@@ -472,10 +472,6 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
   max-height: 100%;
 }
 
-
-
-
-
 .slider {
   position: relative;
   height: 50vh;
@@ -495,7 +491,7 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 .right-arrow {
   position: absolute;
   top: 50%;
-  right: 200px;
+  right: 30%;
   font-size: 3rem;
   color: #000;
   z-index: 10;
@@ -506,7 +502,7 @@ background: radial-gradient(circle, rgba(97,172,224,1) 0%, rgba(188,228,250,1) 1
 .left-arrow {
   position: absolute;
   top: 50%;
-  left: 200px;
+  left: 30%;
   font-size: 3rem;
   color: #000;
   z-index: 10;
