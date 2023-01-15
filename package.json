@@ -15,6 +15,7 @@
     "@mui/joy": "^5.0.0-alpha.62",
     "@mui/material": "^5.11.4",
     "@mui/private-theming": "^5.11.2",
+    "@mui/styles": "^5.11.2",
     "@mui/system": "^5.11.4",
     "@nivo/bar": "^0.80.0",
     "@nivo/bump": "^0.80.0",
@@ -32,7 +33,9 @@
     "react-aframe-ar": "^1.18.0",
     "react-animated-components": "^4.0.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-scripts": "5.0.1",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
