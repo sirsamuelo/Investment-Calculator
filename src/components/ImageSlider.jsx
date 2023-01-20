@@ -6,12 +6,16 @@ import house from '../img/QR/house.png';
 import watch from '../img/QR/watch.png';
 import money from '../img/QR/money.png';
 import boat from '../img/QR/boat.png'
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
 
 
-const ImageSlider = ({ finalAmount}) => {
+const ImageSlider = ({ finalAmount, startingBalance,duration,expectedReturn,data,monthlyDeposit}) => {
   const [current, setCurrent] = useState(0);
   const [qr,setQr] = useState([])
   const [baseArr,setLength] = useState(0)
+  const [item,setItem] = useState('')
 
   useEffect(() => {
     var baseArr = [
@@ -57,6 +61,23 @@ const ImageSlider = ({ finalAmount}) => {
         return new_list
       }
     }
+
+    function setFinalItem(finalAmount) {
+      if(finalAmount < 20000) {
+        return 'buy brand new rolex'
+      } else if(finalAmount >= 20000 && finalAmount < 40000) {
+        return "buy pretty nice piece of land or field near Kosice where you can build your new house"
+      } else if(finalAmount >= 40000 && finalAmount < 80000) {
+        return 'buy a boat'
+      } else if(finalAmount >= 80000 && finalAmount < 120000) {
+        return 'buy brand new mercedes'
+      } else if(finalAmount >= 120000 && finalAmount < 200000) {
+        return 'buy new house'
+      } else if(finalAmount > 200000) {
+        return 'have a lot of money'
+      }
+    }
+    setItem(setFinalItem(finalAmount))
     setQr(makeSlideImageArr(finalAmount))
   },[finalAmount])
 
@@ -82,6 +103,23 @@ const ImageSlider = ({ finalAmount}) => {
 
   return (
     <section className='slider'>
+      <div style={{padding: '1rem'}}>
+						<Divider sx={{ width: '80%', margin: '0 auto' }}>
+							<Chip label='Augmented Reality' color='primary'></Chip>
+						</Divider>
+						<Typography
+							variant='h6'
+							gutterBottom
+							sx={{ margin: '2rem auto', width: '40%', textAlign: 'center' }}
+						>
+							Hello my friend, I see you would like to invest{' '}
+							<span>{startingBalance}€</span> at the beggining of your journey.
+							That`s awsome. Imagine, after <span>{duration}</span> years and
+							with your monthly deposit <span>{monthlyDeposit}€</span> and
+							expected return <span>{data !== 0 ? data : expectedReturn}%</span>{' '}
+							you can {item}. Have a quick look on how it looks like below by scanning QR code.
+						</Typography>
+					</div>
       <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
       <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
       {qr && qr.map((slide, index) => {

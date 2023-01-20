@@ -11,9 +11,8 @@ import TextField from '@mui/material/TextField';
 import Questionaire from './Questionaire';
 import MyResponsiveLine from './MyResponsiveLine';
 import ImageSlider from './ImageSlider';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
+
 
 const Main = () => {
 	const [startingBalance, setStartingBalance] = useState(0);
@@ -181,6 +180,7 @@ const Main = () => {
 				<Questionaire onData={handleData} />
 			</div>
 			<section className='sliders'>
+				<Typography variant="subtitle1"  component="h2" sx={{ fontSize: 12,textAlign: 'center',color: 'primary.main',fontWeight: 'medium' }}>* Never invest all your savings, firstly you should have saved 3 times of your monethly income. This money is your reserve if you lost your job or you have unexpected expenses.</Typography>
 				<h1>Investment Calculator</h1>
 				<form onSubmit={onSubmit}>
 					<div className='Area-1'>
@@ -248,27 +248,7 @@ const Main = () => {
 				<MyResponsiveLine data={myData} />
 			</div>
 			<section className='qr'>
-				{finalAmount !== 0 ? (
-					<div>
-						<Divider sx={{ width: '80%', margin: '0 auto' }}>
-							<Chip label='Augmented Reality' color='primary'></Chip>
-						</Divider>
-						<Typography
-							variant='h6'
-							gutterBottom
-							sx={{ margin: '2rem auto', width: '40%', textAlign: 'center' }}
-						>
-							Hello my friend, I see you would like to invest{' '}
-							<span>{startingBalance}€</span> at the beggining of your journey.
-							That`s awsome. Imagine, after <span>{duration}</span> years and
-							with your monthly deposit <span>{monthlyDeposit}€</span> and
-							expected return <span>{data !== 0 ? data : expectedReturn}%</span>{' '}
-							you can buy lots of things. Lets see what you can buy with your
-							return <span>{finalAmount}€.</span>
-						</Typography>
-					</div>
-				) : null}
-				{finalAmount !== 0 ? <ImageSlider finalAmount={finalAmount}/> : null}
+				{finalAmount !== 0 ? <ImageSlider finalAmount={finalAmount}  data={data} expectedReturn={expectedReturn} monthlyDeposit={monthlyDeposit} startingBalance={startingBalance} duration={duration}/> : null}
 			</section>
 			{/* =====================================FOOTER=========================================== */}
 			<section className='footer'>
