@@ -110,7 +110,7 @@ const ImageSlider = ({ finalAmount, startingBalance,duration,expectedReturn,data
 						<Typography
 							variant='h6'
 							gutterBottom
-							sx={{ margin: '2rem auto', width: '40%', textAlign: 'center' }}
+							sx={{ margin: '2rem auto', width: '30%', textAlign: 'center' }}
 						>
 							Hello my friend, I see you would like to invest{' '}
 							<span>{startingBalance}€</span> at the beggining of your journey.
@@ -134,6 +134,9 @@ const ImageSlider = ({ finalAmount, startingBalance,duration,expectedReturn,data
           </div>
         );
       })}
+      <Typography variant='h6' sx={{ margin: '2rem auto', width: '40%', textAlign: 'center' }}>
+        After scanning QR code, please point your camera on QR code again
+      </Typography>
     </section>
   );
 };
